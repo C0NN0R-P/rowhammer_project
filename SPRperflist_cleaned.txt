@@ -1,0 +1,4050 @@
+List of pre-defined events (to be used in -e)
+
+  branch-instructions OR branches                    [Hardware event]
+  branch-misses                                      [Hardware event]
+  bus-cycles                                         [Hardware event]
+  cache-misses                                       [Hardware event]
+  cache-references                                   [Hardware event]
+  cpu-cycles OR cycles                               [Hardware event]
+  instructions                                       [Hardware event]
+  ref-cycles                                         [Hardware event]
+
+  alignment-faults                                   [Software event]
+  bpf-output                                         [Software event]
+  cgroup-switches                                    [Software event]
+  context-switches OR cs                             [Software event]
+  cpu-clock                                          [Software event]
+  cpu-migrations OR migrations                       [Software event]
+  dummy                                              [Software event]
+  emulation-faults                                   [Software event]
+  major-faults                                       [Software event]
+  minor-faults                                       [Software event]
+  page-faults OR faults                              [Software event]
+  task-clock                                         [Software event]
+
+  duration_time                                      [Tool event]
+
+  L1-dcache-load-misses                              [Hardware cache eve>
+  L1-dcache-loads                                    [Hardware cache eve>
+  L1-dcache-stores                                   [Hardware cache eve>
+  L1-icache-load-misses                              [Hardware cache eve>
+  LLC-load-misses                                    [Hardware cache eve>
+  LLC-loads                                          [Hardware cache eve>
+  LLC-store-misses                                   [Hardware cache eve>
+  LLC-stores                                         [Hardware cache eve>
+  branch-load-misses                                 [Hardware cache eve>
+  branch-loads                                       [Hardware cache eve>
+  dTLB-load-misses                                   [Hardware cache eve>
+  dTLB-loads                                         [Hardware cache eve>
+  dTLB-store-misses                                  [Hardware cache eve>
+  dTLB-stores                                        [Hardware cache eve>
+  iTLB-load-misses                                   [Hardware cache eve>
+  node-load-misses                                   [Hardware cache eve>
+  node-loads                                         [Hardware cache eve>
+
+  branch-instructions OR cpu/branch-instructions/    [Kernel PMU event]
+  branch-misses OR cpu/branch-misses/                [Kernel PMU event]
+
+  bus-cycles OR cpu/bus-cycles/                      [Kernel PMU event]
+
+  cache-misses OR cpu/cache-misses/                  [Kernel PMU event]
+
+  cache-references OR cpu/cache-references/          [Kernel PMU event]
+
+  cpu-cycles OR cpu/cpu-cycles/                      [Kernel PMU event]
+
+  instructions OR cpu/instructions/                  [Kernel PMU event]
+
+  mem-loads OR cpu/mem-loads/                        [Kernel PMU event]
+
+  mem-loads-aux OR cpu/mem-loads-aux/                [Kernel PMU event]
+
+  mem-stores OR cpu/mem-stores/                      [Kernel PMU event]
+
+  ref-cycles OR cpu/ref-cycles/                      [Kernel PMU event]
+
+  slots OR cpu/slots/                                [Kernel PMU event]
+
+  topdown-bad-spec OR cpu/topdown-bad-spec/          [Kernel PMU event]
+
+  topdown-be-bound OR cpu/topdown-be-bound/          [Kernel PMU event]
+
+  topdown-br-mispredict OR cpu/topdown-br-mispredict/ [Kernel PMU event]
+
+  topdown-fe-bound OR cpu/topdown-fe-bound/          [Kernel PMU event]
+
+  topdown-fetch-lat OR cpu/topdown-fetch-lat/        [Kernel PMU event]
+
+  topdown-heavy-ops OR cpu/topdown-heavy-ops/        [Kernel PMU event]
+
+  topdown-mem-bound OR cpu/topdown-mem-bound/        [Kernel PMU event]
+
+  topdown-retiring OR cpu/topdown-retiring/          [Kernel PMU event]
+
+  intel_bts//                                        [Kernel PMU event]
+
+  intel_pt//                                         [Kernel PMU event]
+
+  msr/aperf/                                         [Kernel PMU event]
+
+  msr/cpu_thermal_margin/                            [Kernel PMU event]
+
+  msr/mperf/                                         [Kernel PMU event]
+
+  msr/smi/                                           [Kernel PMU event]
+
+  msr/tsc/                                           [Kernel PMU event]
+
+  power/energy-pkg/                                  [Kernel PMU event]
+
+  power/energy-psys/                                 [Kernel PMU event]
+
+  power/energy-ram/                                  [Kernel PMU event]
+
+  uncore_iio_free_running_0/bw_in_port0/             [Kernel PMU event]
+
+  uncore_iio_free_running_0/bw_in_port1/             [Kernel PMU event]
+
+  uncore_iio_free_running_0/bw_in_port2/             [Kernel PMU event]
+
+  uncore_iio_free_running_0/bw_in_port3/             [Kernel PMU event]
+
+  uncore_iio_free_running_0/bw_in_port4/             [Kernel PMU event]
+
+  uncore_iio_free_running_0/bw_in_port5/             [Kernel PMU event]
+
+  uncore_iio_free_running_0/bw_in_port6/             [Kernel PMU event]
+
+  uncore_iio_free_running_0/bw_in_port7/             [Kernel PMU event]
+
+  uncore_iio_free_running_0/bw_out_port0/            [Kernel PMU event]
+
+  uncore_iio_free_running_0/bw_out_port1/            [Kernel PMU event]
+
+  uncore_iio_free_running_0/bw_out_port2/            [Kernel PMU event]
+
+  uncore_iio_free_running_0/bw_out_port3/            [Kernel PMU event]
+
+  uncore_iio_free_running_0/bw_out_port4/            [Kernel PMU event]
+
+  uncore_iio_free_running_0/bw_out_port5/            [Kernel PMU event]
+
+  uncore_iio_free_running_0/bw_out_port6/            [Kernel PMU event]
+
+  uncore_iio_free_running_0/bw_out_port7/            [Kernel PMU event]
+
+  uncore_iio_free_running_0/ioclk/                   [Kernel PMU event]
+
+  uncore_iio_free_running_1/bw_in_port0/             [Kernel PMU event]
+
+  uncore_iio_free_running_1/bw_in_port1/             [Kernel PMU event]
+
+  uncore_iio_free_running_1/bw_in_port2/             [Kernel PMU event]
+
+  uncore_iio_free_running_1/bw_in_port3/             [Kernel PMU event]
+
+  uncore_iio_free_running_1/bw_in_port4/             [Kernel PMU event]
+
+  uncore_iio_free_running_1/bw_in_port5/             [Kernel PMU event]
+
+  uncore_iio_free_running_1/bw_in_port6/             [Kernel PMU event]
+
+  uncore_iio_free_running_1/bw_in_port7/             [Kernel PMU event]
+
+  uncore_iio_free_running_1/bw_out_port0/            [Kernel PMU event]
+
+  uncore_iio_free_running_1/bw_out_port1/            [Kernel PMU event]
+
+  uncore_iio_free_running_1/bw_out_port2/            [Kernel PMU event]
+
+  uncore_iio_free_running_1/bw_out_port3/            [Kernel PMU event]
+
+  uncore_iio_free_running_1/bw_out_port4/            [Kernel PMU event]
+
+  uncore_iio_free_running_1/bw_out_port5/            [Kernel PMU event]
+
+  uncore_iio_free_running_1/bw_out_port6/            [Kernel PMU event]
+
+  uncore_iio_free_running_1/bw_out_port7/            [Kernel PMU event]
+
+  uncore_iio_free_running_1/ioclk/                   [Kernel PMU event]
+
+  uncore_iio_free_running_10/bw_in_port0/            [Kernel PMU event]
+
+  uncore_iio_free_running_10/bw_in_port1/            [Kernel PMU event]
+
+  uncore_iio_free_running_10/bw_in_port2/            [Kernel PMU event]
+
+  uncore_iio_free_running_10/bw_in_port3/            [Kernel PMU event]
+
+  uncore_iio_free_running_10/bw_in_port4/            [Kernel PMU event]
+
+  uncore_iio_free_running_10/bw_in_port5/            [Kernel PMU event]
+
+  uncore_iio_free_running_10/bw_in_port6/            [Kernel PMU event]
+
+  uncore_iio_free_running_10/bw_in_port7/            [Kernel PMU event]
+
+  uncore_iio_free_running_10/bw_out_port0/           [Kernel PMU event]
+
+  uncore_iio_free_running_10/bw_out_port1/           [Kernel PMU event]
+
+  uncore_iio_free_running_10/bw_out_port2/           [Kernel PMU event]
+
+  uncore_iio_free_running_10/bw_out_port3/           [Kernel PMU event]
+
+  uncore_iio_free_running_10/bw_out_port4/           [Kernel PMU event]
+
+  uncore_iio_free_running_10/bw_out_port5/           [Kernel PMU event]
+
+  uncore_iio_free_running_10/bw_out_port6/           [Kernel PMU event]
+
+  uncore_iio_free_running_10/bw_out_port7/           [Kernel PMU event]
+
+  uncore_iio_free_running_10/ioclk/                  [Kernel PMU event]
+
+  uncore_iio_free_running_11/bw_in_port0/            [Kernel PMU event]
+
+  uncore_iio_free_running_11/bw_in_port1/            [Kernel PMU event]
+
+  uncore_iio_free_running_11/bw_in_port2/            [Kernel PMU event]
+
+  uncore_iio_free_running_11/bw_in_port3/            [Kernel PMU event]
+
+  uncore_iio_free_running_11/bw_in_port4/            [Kernel PMU event]
+
+  uncore_iio_free_running_11/bw_in_port5/            [Kernel PMU event]
+
+  uncore_iio_free_running_11/bw_in_port6/            [Kernel PMU event]
+
+  uncore_iio_free_running_11/bw_in_port7/            [Kernel PMU event]
+
+  uncore_iio_free_running_11/bw_out_port0/           [Kernel PMU event]
+
+  uncore_iio_free_running_11/bw_out_port1/           [Kernel PMU event]
+
+  uncore_iio_free_running_11/bw_out_port2/           [Kernel PMU event]
+
+  uncore_iio_free_running_11/bw_out_port3/           [Kernel PMU event]
+
+  uncore_iio_free_running_11/bw_out_port4/           [Kernel PMU event]
+
+  uncore_iio_free_running_11/bw_out_port5/           [Kernel PMU event]
+
+  uncore_iio_free_running_11/bw_out_port6/           [Kernel PMU event]
+
+  uncore_iio_free_running_11/bw_out_port7/           [Kernel PMU event]
+
+  uncore_iio_free_running_11/ioclk/                  [Kernel PMU event]
+
+  uncore_iio_free_running_2/bw_in_port0/             [Kernel PMU event]
+
+  uncore_iio_free_running_2/bw_in_port1/             [Kernel PMU event]
+
+  uncore_iio_free_running_2/bw_in_port2/             [Kernel PMU event]
+
+  uncore_iio_free_running_2/bw_in_port3/             [Kernel PMU event]
+
+  uncore_iio_free_running_2/bw_in_port4/             [Kernel PMU event]
+
+  uncore_iio_free_running_2/bw_in_port5/             [Kernel PMU event]
+
+  uncore_iio_free_running_2/bw_in_port6/             [Kernel PMU event]
+
+  uncore_iio_free_running_2/bw_in_port7/             [Kernel PMU event]
+
+  uncore_iio_free_running_2/bw_out_port0/            [Kernel PMU event]
+
+  uncore_iio_free_running_2/bw_out_port1/            [Kernel PMU event]
+
+  uncore_iio_free_running_2/bw_out_port2/            [Kernel PMU event]
+
+  uncore_iio_free_running_2/bw_out_port3/            [Kernel PMU event]
+
+  uncore_iio_free_running_2/bw_out_port4/            [Kernel PMU event]
+
+  uncore_iio_free_running_2/bw_out_port5/            [Kernel PMU event]
+
+  uncore_iio_free_running_2/bw_out_port6/            [Kernel PMU event]
+
+  uncore_iio_free_running_2/bw_out_port7/            [Kernel PMU event]
+
+  uncore_iio_free_running_2/ioclk/                   [Kernel PMU event]
+
+  uncore_iio_free_running_3/bw_in_port0/             [Kernel PMU event]
+
+  uncore_iio_free_running_3/bw_in_port1/             [Kernel PMU event]
+
+  uncore_iio_free_running_3/bw_in_port2/             [Kernel PMU event]
+
+  uncore_iio_free_running_3/bw_in_port3/             [Kernel PMU event]
+
+  uncore_iio_free_running_3/bw_in_port4/             [Kernel PMU event]
+
+  uncore_iio_free_running_3/bw_in_port5/             [Kernel PMU event]
+
+  uncore_iio_free_running_3/bw_in_port6/             [Kernel PMU event]
+
+  uncore_iio_free_running_3/bw_in_port7/             [Kernel PMU event]
+
+  uncore_iio_free_running_3/bw_out_port0/            [Kernel PMU event]
+
+  uncore_iio_free_running_3/bw_out_port1/            [Kernel PMU event]
+
+  uncore_iio_free_running_3/bw_out_port2/            [Kernel PMU event]
+
+  uncore_iio_free_running_3/bw_out_port3/            [Kernel PMU event]
+
+  uncore_iio_free_running_3/bw_out_port4/            [Kernel PMU event]
+
+  uncore_iio_free_running_3/bw_out_port5/            [Kernel PMU event]
+
+  uncore_iio_free_running_3/bw_out_port6/            [Kernel PMU event]
+
+  uncore_iio_free_running_3/bw_out_port7/            [Kernel PMU event]
+
+  uncore_iio_free_running_3/ioclk/                   [Kernel PMU event]
+
+  uncore_iio_free_running_4/bw_in_port0/             [Kernel PMU event]
+
+  uncore_iio_free_running_4/bw_in_port1/             [Kernel PMU event]
+
+  uncore_iio_free_running_4/bw_in_port2/             [Kernel PMU event]
+
+  uncore_iio_free_running_4/bw_in_port3/             [Kernel PMU event]
+
+  uncore_iio_free_running_4/bw_in_port4/             [Kernel PMU event]
+
+  uncore_iio_free_running_4/bw_in_port5/             [Kernel PMU event]
+
+  uncore_iio_free_running_4/bw_in_port6/             [Kernel PMU event]
+
+  uncore_iio_free_running_4/bw_in_port7/             [Kernel PMU event]
+
+  uncore_iio_free_running_4/bw_out_port0/            [Kernel PMU event]
+
+  uncore_iio_free_running_4/bw_out_port1/            [Kernel PMU event]
+
+  uncore_iio_free_running_4/bw_out_port2/            [Kernel PMU event]
+
+  uncore_iio_free_running_4/bw_out_port3/            [Kernel PMU event]
+
+  uncore_iio_free_running_4/bw_out_port4/            [Kernel PMU event]
+
+  uncore_iio_free_running_4/bw_out_port5/            [Kernel PMU event]
+
+  uncore_iio_free_running_4/bw_out_port6/            [Kernel PMU event]
+
+  uncore_iio_free_running_4/bw_out_port7/            [Kernel PMU event]
+
+  uncore_iio_free_running_4/ioclk/                   [Kernel PMU event]
+
+  uncore_iio_free_running_5/bw_in_port0/             [Kernel PMU event]
+
+  uncore_iio_free_running_5/bw_in_port1/             [Kernel PMU event]
+
+  uncore_iio_free_running_5/bw_in_port2/             [Kernel PMU event]
+
+  uncore_iio_free_running_5/bw_in_port3/             [Kernel PMU event]
+
+  uncore_iio_free_running_5/bw_in_port4/             [Kernel PMU event]
+
+  uncore_iio_free_running_5/bw_in_port5/             [Kernel PMU event]
+
+  uncore_iio_free_running_5/bw_in_port6/             [Kernel PMU event]
+
+  uncore_iio_free_running_5/bw_in_port7/             [Kernel PMU event]
+
+  uncore_iio_free_running_5/bw_out_port0/            [Kernel PMU event]
+
+  uncore_iio_free_running_5/bw_out_port1/            [Kernel PMU event]
+
+  uncore_iio_free_running_5/bw_out_port2/            [Kernel PMU event]
+
+  uncore_iio_free_running_5/bw_out_port3/            [Kernel PMU event]
+
+  uncore_iio_free_running_5/bw_out_port4/            [Kernel PMU event]
+
+  uncore_iio_free_running_5/bw_out_port5/            [Kernel PMU event]
+
+  uncore_iio_free_running_5/bw_out_port6/            [Kernel PMU event]
+
+  uncore_iio_free_running_5/bw_out_port7/            [Kernel PMU event]
+
+  uncore_iio_free_running_5/ioclk/                   [Kernel PMU event]
+
+  uncore_iio_free_running_6/bw_in_port0/             [Kernel PMU event]
+
+  uncore_iio_free_running_6/bw_in_port1/             [Kernel PMU event]
+
+  uncore_iio_free_running_6/bw_in_port2/             [Kernel PMU event]
+
+  uncore_iio_free_running_6/bw_in_port3/             [Kernel PMU event]
+
+  uncore_iio_free_running_6/bw_in_port4/             [Kernel PMU event]
+
+  uncore_iio_free_running_6/bw_in_port5/             [Kernel PMU event]
+
+  uncore_iio_free_running_6/bw_in_port6/             [Kernel PMU event]
+
+  uncore_iio_free_running_6/bw_in_port7/             [Kernel PMU event]
+
+  uncore_iio_free_running_6/bw_out_port0/            [Kernel PMU event]
+
+  uncore_iio_free_running_6/bw_out_port1/            [Kernel PMU event]
+
+  uncore_iio_free_running_6/bw_out_port2/            [Kernel PMU event]
+
+  uncore_iio_free_running_6/bw_out_port3/            [Kernel PMU event]
+
+  uncore_iio_free_running_6/bw_out_port4/            [Kernel PMU event]
+
+  uncore_iio_free_running_6/bw_out_port5/            [Kernel PMU event]
+
+  uncore_iio_free_running_6/bw_out_port6/            [Kernel PMU event]
+
+  uncore_iio_free_running_6/bw_out_port7/            [Kernel PMU event]
+
+  uncore_iio_free_running_6/ioclk/                   [Kernel PMU event]
+
+  uncore_iio_free_running_7/bw_in_port0/             [Kernel PMU event]
+
+  uncore_iio_free_running_7/bw_in_port1/             [Kernel PMU event]
+
+  uncore_iio_free_running_7/bw_in_port2/             [Kernel PMU event]
+
+  uncore_iio_free_running_7/bw_in_port3/             [Kernel PMU event]
+
+  uncore_iio_free_running_7/bw_in_port4/             [Kernel PMU event]
+
+  uncore_iio_free_running_7/bw_in_port5/             [Kernel PMU event]
+
+  uncore_iio_free_running_7/bw_in_port6/             [Kernel PMU event]
+
+  uncore_iio_free_running_7/bw_in_port7/             [Kernel PMU event]
+
+  uncore_iio_free_running_7/bw_out_port0/            [Kernel PMU event]
+
+  uncore_iio_free_running_7/bw_out_port1/            [Kernel PMU event]
+
+  uncore_iio_free_running_7/bw_out_port2/            [Kernel PMU event]
+
+  uncore_iio_free_running_7/bw_out_port3/            [Kernel PMU event]
+
+  uncore_iio_free_running_7/bw_out_port4/            [Kernel PMU event]
+
+  uncore_iio_free_running_7/bw_out_port5/            [Kernel PMU event]
+
+  uncore_iio_free_running_7/bw_out_port6/            [Kernel PMU event]
+
+  uncore_iio_free_running_7/bw_out_port7/            [Kernel PMU event]
+
+  uncore_iio_free_running_7/ioclk/                   [Kernel PMU event]
+
+  uncore_iio_free_running_8/bw_in_port0/             [Kernel PMU event]
+
+  uncore_iio_free_running_8/bw_in_port1/             [Kernel PMU event]
+
+  uncore_iio_free_running_8/bw_in_port2/             [Kernel PMU event]
+
+  uncore_iio_free_running_8/bw_in_port3/             [Kernel PMU event]
+
+  uncore_iio_free_running_8/bw_in_port4/             [Kernel PMU event]
+
+  uncore_iio_free_running_8/bw_in_port5/             [Kernel PMU event]
+
+  uncore_iio_free_running_8/bw_in_port6/             [Kernel PMU event]
+
+  uncore_iio_free_running_8/bw_in_port7/             [Kernel PMU event]
+
+  uncore_iio_free_running_8/bw_out_port0/            [Kernel PMU event]
+
+  uncore_iio_free_running_8/bw_out_port1/            [Kernel PMU event]
+
+  uncore_iio_free_running_8/bw_out_port2/            [Kernel PMU event]
+
+  uncore_iio_free_running_8/bw_out_port3/            [Kernel PMU event]
+
+  uncore_iio_free_running_8/bw_out_port4/            [Kernel PMU event]
+
+  uncore_iio_free_running_8/bw_out_port5/            [Kernel PMU event]
+
+  uncore_iio_free_running_8/bw_out_port6/            [Kernel PMU event]
+
+  uncore_iio_free_running_8/bw_out_port7/            [Kernel PMU event]
+
+  uncore_iio_free_running_8/ioclk/                   [Kernel PMU event]
+
+  uncore_iio_free_running_9/bw_in_port0/             [Kernel PMU event]
+
+  uncore_iio_free_running_9/bw_in_port1/             [Kernel PMU event]
+
+  uncore_iio_free_running_9/bw_in_port2/             [Kernel PMU event]
+
+  uncore_iio_free_running_9/bw_in_port3/             [Kernel PMU event]
+
+  uncore_iio_free_running_9/bw_in_port4/             [Kernel PMU event]
+
+  uncore_iio_free_running_9/bw_in_port5/             [Kernel PMU event]
+
+  uncore_iio_free_running_9/bw_in_port6/             [Kernel PMU event]
+
+  uncore_iio_free_running_9/bw_in_port7/             [Kernel PMU event]
+
+  uncore_iio_free_running_9/bw_out_port0/            [Kernel PMU event]
+
+  uncore_iio_free_running_9/bw_out_port1/            [Kernel PMU event]
+
+  uncore_iio_free_running_9/bw_out_port2/            [Kernel PMU event]
+
+  uncore_iio_free_running_9/bw_out_port3/            [Kernel PMU event]
+
+  uncore_iio_free_running_9/bw_out_port4/            [Kernel PMU event]
+
+  uncore_iio_free_running_9/bw_out_port5/            [Kernel PMU event]
+
+  uncore_iio_free_running_9/bw_out_port6/            [Kernel PMU event]
+
+  uncore_iio_free_running_9/bw_out_port7/            [Kernel PMU event]
+
+  uncore_iio_free_running_9/ioclk/                   [Kernel PMU event]
+
+  uncore_imc_free_running_0/dclk/                    [Kernel PMU event]
+
+  uncore_imc_free_running_0/rpq_cycles/              [Kernel PMU event]
+
+  uncore_imc_free_running_0/wpq_cycles/              [Kernel PMU event]
+
+  uncore_imc_free_running_1/dclk/                    [Kernel PMU event]
+
+  uncore_imc_free_running_1/rpq_cycles/              [Kernel PMU event]
+
+  uncore_imc_free_running_1/wpq_cycles/              [Kernel PMU event]
+
+  uncore_imc_free_running_2/dclk/                    [Kernel PMU event]
+
+  uncore_imc_free_running_2/rpq_cycles/              [Kernel PMU event]
+
+  uncore_imc_free_running_2/wpq_cycles/              [Kernel PMU event]
+
+  uncore_imc_free_running_3/dclk/                    [Kernel PMU event]
+
+  uncore_imc_free_running_3/rpq_cycles/              [Kernel PMU event]
+
+  uncore_imc_free_running_3/wpq_cycles/              [Kernel PMU event]
+
+
+
+  rNNN                                               [Raw hardware event>
+
+  cpu/t1=v1[,t2=v2,t3 ...]/modifier                  [Raw hardware event>
+
+   (see 'man perf-list' on how to encode it)
+
+
+
+  mem<addr>[/len][access]                          [Hardware breakpoin>
+
+
+
+  alarmtimeralarmtimer_cancel                       [Tracepoint event]
+
+  alarmtimeralarmtimer_fired                        [Tracepoint event]
+
+  alarmtimeralarmtimer_start                        [Tracepoint event]
+
+  alarmtimeralarmtimer_suspend                      [Tracepoint event]
+
+  amd_cpuamd_pstate_perf                            [Tracepoint event]
+
+  avcselinux_audited                                [Tracepoint event]
+
+  blockblock_bio_backmerge                          [Tracepoint event]
+
+  blockblock_bio_bounce                             [Tracepoint event]
+
+  blockblock_bio_complete                           [Tracepoint event]
+
+  blockblock_bio_frontmerge                         [Tracepoint event]
+
+  blockblock_bio_queue                              [Tracepoint event]
+
+  blockblock_bio_remap                              [Tracepoint event]
+
+  blockblock_dirty_buffer                           [Tracepoint event]
+
+  blockblock_getrq                                  [Tracepoint event]
+
+  blockblock_plug                                   [Tracepoint event]
+
+  blockblock_rq_complete                            [Tracepoint event]
+
+  blockblock_rq_insert                              [Tracepoint event]
+
+  blockblock_rq_issue                               [Tracepoint event]
+
+  blockblock_rq_merge                               [Tracepoint event]
+
+  blockblock_rq_remap                               [Tracepoint event]
+
+  blockblock_rq_requeue                             [Tracepoint event]
+
+  blockblock_split                                  [Tracepoint event]
+
+  blockblock_touch_buffer                           [Tracepoint event]
+
+  blockblock_unplug                                 [Tracepoint event]
+
+  bpf_test_runbpf_test_finish                       [Tracepoint event]
+
+  bpf_tracebpf_trace_printk                         [Tracepoint event]
+
+  bridgebr_fdb_add                                  [Tracepoint event]
+
+  bridgebr_fdb_external_learn_add                   [Tracepoint event]
+
+  bridgebr_fdb_update                               [Tracepoint event]
+
+  bridgefdb_delete                                  [Tracepoint event]
+
+  btrfs__extent_writepage                           [Tracepoint event]
+
+  btrfsadd_delayed_data_ref                         [Tracepoint event]
+
+  btrfsadd_delayed_ref_head                         [Tracepoint event]
+
+  btrfsadd_delayed_tree_ref                         [Tracepoint event]
+
+  btrfsalloc_extent_state                           [Tracepoint event]
+
+  btrfsbtrfs_add_block_group                        [Tracepoint event]
+
+  btrfsbtrfs_add_reclaim_block_group                [Tracepoint event]
+
+  btrfsbtrfs_add_unused_block_group                 [Tracepoint event]
+
+  btrfsbtrfs_all_work_done                          [Tracepoint event]
+
+  btrfsbtrfs_chunk_alloc                            [Tracepoint event]
+
+  btrfsbtrfs_chunk_free                             [Tracepoint event]
+
+  btrfsbtrfs_clear_extent_bit                       [Tracepoint event]
+
+  btrfsbtrfs_convert_extent_bit                     [Tracepoint event]
+
+  btrfsbtrfs_cow_block                              [Tracepoint event]
+
+  btrfsbtrfs_done_preemptive_reclaim                [Tracepoint event]
+
+  btrfsbtrfs_fail_all_tickets                       [Tracepoint event]
+
+  btrfsbtrfs_failed_cluster_setup                   [Tracepoint event]
+
+  btrfsbtrfs_find_cluster                           [Tracepoint event]
+
+  btrfsbtrfs_flush_space                            [Tracepoint event]
+
+  btrfsbtrfs_get_extent                             [Tracepoint event]
+
+  btrfsbtrfs_get_extent_show_fi_inline              [Tracepoint event]
+
+  btrfsbtrfs_get_extent_show_fi_regular             [Tracepoint event]
+
+  btrfsbtrfs_handle_em_exist                        [Tracepoint event]
+
+  btrfsbtrfs_inode_evict                            [Tracepoint event]
+
+  btrfsbtrfs_inode_mod_outstanding_extents          [Tracepoint event]
+
+  btrfsbtrfs_inode_new                              [Tracepoint event]
+
+  btrfsbtrfs_inode_request                          [Tracepoint event]
+
+  btrfsbtrfs_ordered_extent_add                     [Tracepoint event]
+
+  btrfsbtrfs_ordered_extent_put                     [Tracepoint event]
+
+  btrfsbtrfs_ordered_extent_remove                  [Tracepoint event]
+
+  btrfsbtrfs_ordered_extent_start                   [Tracepoint event]
+
+  btrfsbtrfs_ordered_sched                          [Tracepoint event]
+
+  btrfsbtrfs_prelim_ref_insert                      [Tracepoint event]
+
+  btrfsbtrfs_prelim_ref_merge                       [Tracepoint event]
+
+  btrfsbtrfs_qgroup_account_extent                  [Tracepoint event]
+
+  btrfsbtrfs_qgroup_account_extents                 [Tracepoint event]
+
+  btrfsbtrfs_qgroup_release_data                    [Tracepoint event]
+
+  btrfsbtrfs_qgroup_reserve_data                    [Tracepoint event]
+
+  btrfsbtrfs_qgroup_trace_extent                    [Tracepoint event]
+
+  btrfsbtrfs_reclaim_block_group                    [Tracepoint event]
+
+  btrfsbtrfs_remove_block_group                     [Tracepoint event]
+
+  btrfsbtrfs_reserve_extent                         [Tracepoint event]
+
+  btrfsbtrfs_reserve_extent_cluster                 [Tracepoint event]
+
+  btrfsbtrfs_reserve_ticket                         [Tracepoint event]
+
+  btrfsbtrfs_reserved_extent_alloc                  [Tracepoint event]
+
+  btrfsbtrfs_reserved_extent_free                   [Tracepoint event]
+
+  btrfsbtrfs_set_extent_bit                         [Tracepoint event]
+
+  btrfsbtrfs_set_lock_blocking_read                 [Tracepoint event]
+
+  btrfsbtrfs_set_lock_blocking_write                [Tracepoint event]
+
+  btrfsbtrfs_setup_cluster                          [Tracepoint event]
+
+  btrfsbtrfs_skip_unused_block_group                [Tracepoint event]
+
+  btrfsbtrfs_space_reservation                      [Tracepoint event]
+
+  btrfsbtrfs_sync_file                              [Tracepoint event]
+
+  btrfsbtrfs_sync_fs                                [Tracepoint event]
+
+  btrfsbtrfs_transaction_commit                     [Tracepoint event]
+
+  btrfsbtrfs_tree_lock                              [Tracepoint event]
+
+  btrfsbtrfs_tree_read_lock                         [Tracepoint event]
+
+  btrfsbtrfs_tree_read_lock_atomic                  [Tracepoint event]
+
+  btrfsbtrfs_tree_read_unlock                       [Tracepoint event]
+
+  btrfsbtrfs_tree_read_unlock_blocking              [Tracepoint event]
+
+  btrfsbtrfs_tree_unlock                            [Tracepoint event]
+
+  btrfsbtrfs_trigger_flush                          [Tracepoint event]
+
+  btrfsbtrfs_truncate_show_fi_inline                [Tracepoint event]
+
+  btrfsbtrfs_truncate_show_fi_regular               [Tracepoint event]
+
+  btrfsbtrfs_try_tree_read_lock                     [Tracepoint event]
+
+  btrfsbtrfs_try_tree_write_lock                    [Tracepoint event]
+
+  btrfsbtrfs_work_queued                            [Tracepoint event]
+
+  btrfsbtrfs_work_sched                             [Tracepoint event]
+
+  btrfsbtrfs_workqueue_alloc                        [Tracepoint event]
+
+  btrfsbtrfs_workqueue_destroy                      [Tracepoint event]
+
+  btrfsbtrfs_writepage_end_io_hook                  [Tracepoint event]
+
+  btrfsfind_free_extent                             [Tracepoint event]
+
+  btrfsfree_extent_state                            [Tracepoint event]
+
+  btrfsqgroup_meta_convert                          [Tracepoint event]
+
+  btrfsqgroup_meta_free_all_pertrans                [Tracepoint event]
+
+  btrfsqgroup_meta_reserve                          [Tracepoint event]
+
+  btrfsqgroup_num_dirty_extents                     [Tracepoint event]
+
+  btrfsqgroup_update_counters                       [Tracepoint event]
+
+  btrfsqgroup_update_reserve                        [Tracepoint event]
+
+  btrfsrun_delayed_data_ref                         [Tracepoint event]
+
+  btrfsrun_delayed_ref_head                         [Tracepoint event]
+
+  btrfsrun_delayed_tree_ref                         [Tracepoint event]
+
+  btrfsupdate_bytes_may_use                         [Tracepoint event]
+
+  btrfsupdate_bytes_pinned                          [Tracepoint event]
+
+  cgroupcgroup_attach_task                          [Tracepoint event]
+
+  cgroupcgroup_destroy_root                         [Tracepoint event]
+
+  cgroupcgroup_freeze                               [Tracepoint event]
+
+  cgroupcgroup_mkdir                                [Tracepoint event]
+
+  cgroupcgroup_notify_frozen                        [Tracepoint event]
+
+  cgroupcgroup_notify_populated                     [Tracepoint event]
+
+  cgroupcgroup_release                              [Tracepoint event]
+
+  cgroupcgroup_remount                              [Tracepoint event]
+
+  cgroupcgroup_rename                               [Tracepoint event]
+
+  cgroupcgroup_rmdir                                [Tracepoint event]
+
+  cgroupcgroup_setup_root                           [Tracepoint event]
+
+  cgroupcgroup_transfer_tasks                       [Tracepoint event]
+
+  cgroupcgroup_unfreeze                             [Tracepoint event]
+
+  clkclk_disable                                    [Tracepoint event]
+
+  clkclk_disable_complete                           [Tracepoint event]
+
+  clkclk_enable                                     [Tracepoint event]
+
+  clkclk_enable_complete                            [Tracepoint event]
+
+  clkclk_prepare                                    [Tracepoint event]
+
+  clkclk_prepare_complete                           [Tracepoint event]
+
+  clkclk_set_duty_cycle                             [Tracepoint event]
+
+  clkclk_set_duty_cycle_complete                    [Tracepoint event]
+
+  clkclk_set_max_rate                               [Tracepoint event]
+
+  clkclk_set_min_rate                               [Tracepoint event]
+
+  clkclk_set_parent                                 [Tracepoint event]
+
+  clkclk_set_parent_complete                        [Tracepoint event]
+
+  clkclk_set_phase                                  [Tracepoint event]
+
+  clkclk_set_phase_complete                         [Tracepoint event]
+
+  clkclk_set_rate                                   [Tracepoint event]
+
+  clkclk_set_rate_complete                          [Tracepoint event]
+
+  clkclk_set_rate_range                             [Tracepoint event]
+
+  clkclk_unprepare                                  [Tracepoint event]
+
+  clkclk_unprepare_complete                         [Tracepoint event]
+
+  compactionmm_compaction_begin                     [Tracepoint event]
+
+  compactionmm_compaction_defer_compaction          [Tracepoint event]
+
+  compactionmm_compaction_defer_reset               [Tracepoint event]
+
+  compactionmm_compaction_deferred                  [Tracepoint event]
+
+  compactionmm_compaction_end                       [Tracepoint event]
+
+  compactionmm_compaction_finished                  [Tracepoint event]
+
+  compactionmm_compaction_isolate_freepages         [Tracepoint event]
+
+  compactionmm_compaction_isolate_migratepages      [Tracepoint event]
+
+  compactionmm_compaction_kcompactd_sleep           [Tracepoint event]
+
+  compactionmm_compaction_kcompactd_wake            [Tracepoint event]
+
+  compactionmm_compaction_migratepages              [Tracepoint event]
+
+  compactionmm_compaction_suitable                  [Tracepoint event]
+
+  compactionmm_compaction_try_to_compact_pages      [Tracepoint event]
+
+  compactionmm_compaction_wakeup_kcompactd          [Tracepoint event]
+
+  cpuhpcpuhp_enter                                  [Tracepoint event]
+
+  cpuhpcpuhp_exit                                   [Tracepoint event]
+
+  cpuhpcpuhp_multi_enter                            [Tracepoint event]
+
+  cros_eccros_ec_request_done                       [Tracepoint event]
+
+  cros_eccros_ec_request_start                      [Tracepoint event]
+
+  devdevres_log                                     [Tracepoint event]
+
+  devfreqdevfreq_frequency                          [Tracepoint event]
+
+  devfreqdevfreq_monitor                            [Tracepoint event]
+
+  devlinkdevlink_health_recover_aborted             [Tracepoint event]
+
+  devlinkdevlink_health_report                      [Tracepoint event]
+
+  devlinkdevlink_health_reporter_state_update       [Tracepoint event]
+
+  devlinkdevlink_hwerr                              [Tracepoint event]
+
+  devlinkdevlink_hwmsg                              [Tracepoint event]
+
+  devlinkdevlink_trap_report                        [Tracepoint event]
+
+  dma_fencedma_fence_destroy                        [Tracepoint event]
+
+  dma_fencedma_fence_emit                           [Tracepoint event]
+
+  dma_fencedma_fence_enable_signal                  [Tracepoint event]
+
+  dma_fencedma_fence_init                           [Tracepoint event]
+
+  dma_fencedma_fence_signaled                       [Tracepoint event]
+
+  dma_fencedma_fence_wait_end                       [Tracepoint event]
+
+  dma_fencedma_fence_wait_start                     [Tracepoint event]
+
+  drmdrm_vblank_event                               [Tracepoint event]
+
+  drmdrm_vblank_event_delivered                     [Tracepoint event]
+
+  drmdrm_vblank_event_queued                        [Tracepoint event]
+
+  error_reporterror_report_end                      [Tracepoint event]
+
+  exceptionspage_fault_kernel                       [Tracepoint event]
+
+  exceptionspage_fault_user                         [Tracepoint event]
+
+  ext4ext4_alloc_da_blocks                          [Tracepoint event]
+
+  ext4ext4_allocate_blocks                          [Tracepoint event]
+
+  ext4ext4_allocate_inode                           [Tracepoint event]
+
+  ext4ext4_begin_ordered_truncate                   [Tracepoint event]
+
+  ext4ext4_collapse_range                           [Tracepoint event]
+
+  ext4ext4_da_release_space                         [Tracepoint event]
+
+  ext4ext4_da_reserve_space                         [Tracepoint event]
+
+  ext4ext4_da_update_reserve_space                  [Tracepoint event]
+
+  ext4ext4_da_write_begin                           [Tracepoint event]
+
+  ext4ext4_da_write_end                             [Tracepoint event]
+
+  ext4ext4_da_write_pages                           [Tracepoint event]
+
+  ext4ext4_da_write_pages_extent                    [Tracepoint event]
+
+  ext4ext4_discard_blocks                           [Tracepoint event]
+
+  ext4ext4_discard_preallocations                   [Tracepoint event]
+
+  ext4ext4_drop_inode                               [Tracepoint event]
+
+  ext4ext4_error                                    [Tracepoint event]
+
+  ext4ext4_es_cache_extent                          [Tracepoint event]
+
+  ext4ext4_es_find_extent_range_enter               [Tracepoint event]
+
+  ext4ext4_es_find_extent_range_exit                [Tracepoint event]
+
+  ext4ext4_es_insert_delayed_block                  [Tracepoint event]
+
+  ext4ext4_es_insert_extent                         [Tracepoint event]
+
+  ext4ext4_es_lookup_extent_enter                   [Tracepoint event]
+
+  ext4ext4_es_lookup_extent_exit                    [Tracepoint event]
+
+  ext4ext4_es_remove_extent                         [Tracepoint event]
+
+  ext4ext4_es_shrink                                [Tracepoint event]
+
+  ext4ext4_es_shrink_count                          [Tracepoint event]
+
+  ext4ext4_es_shrink_scan_enter                     [Tracepoint event]
+
+  ext4ext4_es_shrink_scan_exit                      [Tracepoint event]
+
+  ext4ext4_evict_inode                              [Tracepoint event]
+
+  ext4ext4_ext_convert_to_initialized_enter         [Tracepoint event]
+
+  ext4ext4_ext_convert_to_initialized_fastpath      [Tracepoint event]
+
+  ext4ext4_ext_handle_unwritten_extents             [Tracepoint event]
+
+  ext4ext4_ext_load_extent                          [Tracepoint event]
+
+  ext4ext4_ext_map_blocks_enter                     [Tracepoint event]
+
+  ext4ext4_ext_map_blocks_exit                      [Tracepoint event]
+
+  ext4ext4_ext_remove_space                         [Tracepoint event]
+
+  ext4ext4_ext_remove_space_done                    [Tracepoint event]
+
+  ext4ext4_ext_rm_idx                               [Tracepoint event]
+
+  ext4ext4_ext_rm_leaf                              [Tracepoint event]
+
+  ext4ext4_ext_show_extent                          [Tracepoint event]
+
+  ext4ext4_fallocate_enter                          [Tracepoint event]
+
+  ext4ext4_fallocate_exit                           [Tracepoint event]
+
+  ext4ext4_fc_commit_start                          [Tracepoint event]
+
+  ext4ext4_fc_commit_stop                           [Tracepoint event]
+
+  ext4ext4_fc_replay                                [Tracepoint event]
+
+  ext4ext4_fc_replay_scan                           [Tracepoint event]
+
+  ext4ext4_fc_stats                                 [Tracepoint event]
+
+  ext4ext4_fc_track_create                          [Tracepoint event]
+
+  ext4ext4_fc_track_inode                           [Tracepoint event]
+
+  ext4ext4_fc_track_link                            [Tracepoint event]
+
+  ext4ext4_fc_track_range                           [Tracepoint event]
+
+  ext4ext4_fc_track_unlink                          [Tracepoint event]
+
+  ext4ext4_forget                                   [Tracepoint event]
+
+  ext4ext4_free_blocks                              [Tracepoint event]
+
+  ext4ext4_free_inode                               [Tracepoint event]
+
+  ext4ext4_fsmap_high_key                           [Tracepoint event]
+
+  ext4ext4_fsmap_low_key                            [Tracepoint event]
+
+  ext4ext4_fsmap_mapping                            [Tracepoint event]
+
+  ext4ext4_get_implied_cluster_alloc_exit           [Tracepoint event]
+
+  ext4ext4_getfsmap_high_key                        [Tracepoint event]
+
+  ext4ext4_getfsmap_low_key                         [Tracepoint event]
+
+  ext4ext4_getfsmap_mapping                         [Tracepoint event]
+
+  ext4ext4_ind_map_blocks_enter                     [Tracepoint event]
+
+  ext4ext4_ind_map_blocks_exit                      [Tracepoint event]
+
+  ext4ext4_insert_range                             [Tracepoint event]
+
+  ext4ext4_invalidatepage                           [Tracepoint event]
+
+  ext4ext4_journal_start                            [Tracepoint event]
+
+  ext4ext4_journal_start_reserved                   [Tracepoint event]
+
+  ext4ext4_journalled_invalidatepage                [Tracepoint event]
+
+  ext4ext4_journalled_write_end                     [Tracepoint event]
+
+  ext4ext4_lazy_itable_init                         [Tracepoint event]
+
+  ext4ext4_load_inode                               [Tracepoint event]
+
+  ext4ext4_load_inode_bitmap                        [Tracepoint event]
+
+  ext4ext4_mark_inode_dirty                         [Tracepoint event]
+
+  ext4ext4_mb_bitmap_load                           [Tracepoint event]
+
+  ext4ext4_mb_buddy_bitmap_load                     [Tracepoint event]
+
+  ext4ext4_mb_discard_preallocations                [Tracepoint event]
+
+  ext4ext4_mb_new_group_pa                          [Tracepoint event]
+
+  ext4ext4_mb_new_inode_pa                          [Tracepoint event]
+
+  ext4ext4_mb_release_group_pa                      [Tracepoint event]
+
+  ext4ext4_mb_release_inode_pa                      [Tracepoint event]
+
+  ext4ext4_mballoc_alloc                            [Tracepoint event]
+
+  ext4ext4_mballoc_discard                          [Tracepoint event]
+
+  ext4ext4_mballoc_free                             [Tracepoint event]
+
+  ext4ext4_mballoc_prealloc                         [Tracepoint event]
+
+  ext4ext4_nfs_commit_metadata                      [Tracepoint event]
+
+  ext4ext4_other_inode_update_time                  [Tracepoint event]
+
+  ext4ext4_prefetch_bitmaps                         [Tracepoint event]
+
+  ext4ext4_punch_hole                               [Tracepoint event]
+
+  ext4ext4_read_block_bitmap_load                   [Tracepoint event]
+
+  ext4ext4_readpage                                 [Tracepoint event]
+
+  ext4ext4_releasepage                              [Tracepoint event]
+
+  ext4ext4_remove_blocks                            [Tracepoint event]
+
+  ext4ext4_request_blocks                           [Tracepoint event]
+
+  ext4ext4_request_inode                            [Tracepoint event]
+
+  ext4ext4_shutdown                                 [Tracepoint event]
+
+  ext4ext4_sync_file_enter                          [Tracepoint event]
+
+  ext4ext4_sync_file_exit                           [Tracepoint event]
+
+  ext4ext4_sync_fs                                  [Tracepoint event]
+
+  ext4ext4_trim_all_free                            [Tracepoint event]
+
+  ext4ext4_trim_extent                              [Tracepoint event]
+
+  ext4ext4_truncate_enter                           [Tracepoint event]
+
+  ext4ext4_truncate_exit                            [Tracepoint event]
+
+  ext4ext4_unlink_enter                             [Tracepoint event]
+
+  ext4ext4_unlink_exit                              [Tracepoint event]
+
+  ext4ext4_write_begin                              [Tracepoint event]
+
+  ext4ext4_write_end                                [Tracepoint event]
+
+  ext4ext4_writepage                                [Tracepoint event]
+
+  ext4ext4_writepages                               [Tracepoint event]
+
+  ext4ext4_writepages_result                        [Tracepoint event]
+
+  ext4ext4_zero_range                               [Tracepoint event]
+
+  fib6fib6_table_lookup                             [Tracepoint event]
+
+  fibfib_table_lookup                               [Tracepoint event]
+
+  filelockbreak_lease_block                         [Tracepoint event]
+
+  filelockbreak_lease_noblock                       [Tracepoint event]
+
+  filelockbreak_lease_unblock                       [Tracepoint event]
+
+  filelockfcntl_setlk                               [Tracepoint event]
+
+  filelockflock_lock_inode                          [Tracepoint event]
+
+  filelockgeneric_add_lease                         [Tracepoint event]
+
+  filelockgeneric_delete_lease                      [Tracepoint event]
+
+  filelockleases_conflict                           [Tracepoint event]
+
+  filelocklocks_get_lock_context                    [Tracepoint event]
+
+  filelocklocks_remove_posix                        [Tracepoint event]
+
+  filelockposix_lock_inode                          [Tracepoint event]
+
+  filelocktime_out_leases                           [Tracepoint event]
+
+  filemapfile_check_and_advance_wb_err              [Tracepoint event]
+
+  filemapfilemap_set_wb_err                         [Tracepoint event]
+
+  filemapmm_filemap_add_to_page_cache               [Tracepoint event]
+
+  filemapmm_filemap_delete_from_page_cache          [Tracepoint event]
+
+  fs_daxdax_insert_mapping                          [Tracepoint event]
+
+  fs_daxdax_insert_pfn_mkwrite                      [Tracepoint event]
+
+  fs_daxdax_insert_pfn_mkwrite_no_entry             [Tracepoint event]
+
+  fs_daxdax_load_hole                               [Tracepoint event]
+
+  fs_daxdax_pmd_fault                               [Tracepoint event]
+
+  fs_daxdax_pmd_fault_done                          [Tracepoint event]
+
+  fs_daxdax_pmd_insert_mapping                      [Tracepoint event]
+
+  fs_daxdax_pmd_load_hole                           [Tracepoint event]
+
+  fs_daxdax_pmd_load_hole_fallback                  [Tracepoint event]
+
+  fs_daxdax_pte_fault                               [Tracepoint event]
+
+  fs_daxdax_pte_fault_done                          [Tracepoint event]
+
+  fs_daxdax_writeback_one                           [Tracepoint event]
+
+  fs_daxdax_writeback_range                         [Tracepoint event]
+
+  fs_daxdax_writeback_range_done                    [Tracepoint event]
+
+  ftracefunction                                    [Tracepoint event]
+
+  ftraceprint                                       [Tracepoint event]
+
+  gpiogpio_direction                                [Tracepoint event]
+
+  gpiogpio_value                                    [Tracepoint event]
+
+  huge_memorymm_collapse_huge_page                  [Tracepoint event]
+
+  huge_memorymm_collapse_huge_page_isolate          [Tracepoint event]
+
+  huge_memorymm_collapse_huge_page_swapin           [Tracepoint event]
+
+  huge_memorymm_khugepaged_scan_pmd                 [Tracepoint event]
+
+  hwmonhwmon_attr_show                              [Tracepoint event]
+
+  hwmonhwmon_attr_show_string                       [Tracepoint event]
+
+  hwmonhwmon_attr_store                             [Tracepoint event]
+
+  hypervhyperv_mmu_flush_tlb_multi                  [Tracepoint event]
+
+  hypervhyperv_nested_flush_guest_mapping           [Tracepoint event]
+
+  hypervhyperv_nested_flush_guest_mapping_range     [Tracepoint event]
+
+  hypervhyperv_send_ipi_mask                        [Tracepoint event]
+
+  hypervhyperv_send_ipi_one                         [Tracepoint event]
+
+  i2ci2c_read                                       [Tracepoint event]
+
+  i2ci2c_reply                                      [Tracepoint event]
+
+  i2ci2c_result                                     [Tracepoint event]
+
+  i2ci2c_write                                      [Tracepoint event]
+
+  ib_madib_mad_create_agent                         [Tracepoint event]
+
+  ib_madib_mad_error_handler                        [Tracepoint event]
+
+  ib_madib_mad_handle_ib_smi                        [Tracepoint event]
+
+  ib_madib_mad_handle_opa_smi                       [Tracepoint event]
+
+  ib_madib_mad_handle_out_ib_smi                    [Tracepoint event]
+
+  ib_madib_mad_handle_out_opa_smi                   [Tracepoint event]
+
+  ib_madib_mad_ib_send_mad                          [Tracepoint event]
+
+  ib_madib_mad_recv_done_agent                      [Tracepoint event]
+
+  ib_madib_mad_recv_done_handler                    [Tracepoint event]
+
+  ib_madib_mad_send_done_agent                      [Tracepoint event]
+
+  ib_madib_mad_send_done_handler                    [Tracepoint event]
+
+  ib_madib_mad_send_done_resend                     [Tracepoint event]
+
+  ib_madib_mad_unregister_agent                     [Tracepoint event]
+
+  initcallinitcall_finish                           [Tracepoint event]
+
+  initcallinitcall_level                            [Tracepoint event]
+
+  initcallinitcall_start                            [Tracepoint event]
+
+  intel_iommuprq_report                             [Tracepoint event]
+
+  intel_iommuqi_submit                              [Tracepoint event]
+
+  interconnecticc_set_bw                            [Tracepoint event]
+
+  interconnecticc_set_bw_end                        [Tracepoint event]
+
+  io_uringio_uring_complete                         [Tracepoint event]
+
+  io_uringio_uring_cqring_wait                      [Tracepoint event]
+
+  io_uringio_uring_create                           [Tracepoint event]
+
+  io_uringio_uring_defer                            [Tracepoint event]
+
+  io_uringio_uring_fail_link                        [Tracepoint event]
+
+  io_uringio_uring_file_get                         [Tracepoint event]
+
+  io_uringio_uring_link                             [Tracepoint event]
+
+  io_uringio_uring_poll_arm                         [Tracepoint event]
+
+  io_uringio_uring_poll_wake                        [Tracepoint event]
+
+  io_uringio_uring_queue_async_work                 [Tracepoint event]
+
+  io_uringio_uring_register                         [Tracepoint event]
+
+  io_uringio_uring_submit_sqe                       [Tracepoint event]
+
+  io_uringio_uring_task_add                         [Tracepoint event]
+
+  io_uringio_uring_task_run                         [Tracepoint event]
+
+  iocostiocost_inuse_adjust                         [Tracepoint event]
+
+  iocostiocost_inuse_shortage                       [Tracepoint event]
+
+  iocostiocost_inuse_transfer                       [Tracepoint event]
+
+  iocostiocost_ioc_vrate_adj                        [Tracepoint event]
+
+  iocostiocost_iocg_activate                        [Tracepoint event]
+
+  iocostiocost_iocg_forgive_debt                    [Tracepoint event]
+
+  iocostiocost_iocg_idle                            [Tracepoint event]
+
+  iomapiomap_dio_invalidate_fail                    [Tracepoint event]
+
+  iomapiomap_invalidatepage                         [Tracepoint event]
+
+  iomapiomap_iter                                   [Tracepoint event]
+
+  iomapiomap_iter_dstmap                            [Tracepoint event]
+
+  iomapiomap_iter_srcmap                            [Tracepoint event]
+
+  iomapiomap_readahead                              [Tracepoint event]
+
+  iomapiomap_readpage                               [Tracepoint event]
+
+  iomapiomap_releasepage                            [Tracepoint event]
+
+  iomapiomap_writepage                              [Tracepoint event]
+
+  iommuadd_device_to_group                          [Tracepoint event]
+
+  iommuattach_device_to_domain                      [Tracepoint event]
+
+  iommudetach_device_from_domain                    [Tracepoint event]
+
+  iommuio_page_fault                                [Tracepoint event]
+
+  iommumap                                          [Tracepoint event]
+
+  iommuremove_device_from_group                     [Tracepoint event]
+
+  iommuunmap                                        [Tracepoint event]
+
+  irqirq_handler_entry                              [Tracepoint event]
+
+  irqirq_handler_exit                               [Tracepoint event]
+
+  irqsoftirq_entry                                  [Tracepoint event]
+
+  irqsoftirq_exit                                   [Tracepoint event]
+
+  irqsoftirq_raise                                  [Tracepoint event]
+
+  irq_matrixirq_matrix_alloc                        [Tracepoint event]
+
+  irq_matrixirq_matrix_alloc_managed                [Tracepoint event]
+
+  irq_matrixirq_matrix_alloc_reserved               [Tracepoint event]
+
+  irq_matrixirq_matrix_assign                       [Tracepoint event]
+
+  irq_matrixirq_matrix_assign_system                [Tracepoint event]
+
+  irq_matrixirq_matrix_free                         [Tracepoint event]
+
+  irq_matrixirq_matrix_offline                      [Tracepoint event]
+
+  irq_matrixirq_matrix_online                       [Tracepoint event]
+
+  irq_matrixirq_matrix_remove_managed               [Tracepoint event]
+
+  irq_matrixirq_matrix_remove_reserved              [Tracepoint event]
+
+  irq_matrixirq_matrix_reserve                      [Tracepoint event]
+
+  irq_matrixirq_matrix_reserve_managed              [Tracepoint event]
+
+  irq_vectorscall_function_entry                    [Tracepoint event]
+
+  irq_vectorscall_function_exit                     [Tracepoint event]
+
+  irq_vectorscall_function_single_entry             [Tracepoint event]
+
+  irq_vectorscall_function_single_exit              [Tracepoint event]
+
+  irq_vectorsdeferred_error_apic_entry              [Tracepoint event]
+
+  irq_vectorsdeferred_error_apic_exit               [Tracepoint event]
+
+  irq_vectorserror_apic_entry                       [Tracepoint event]
+
+  irq_vectorserror_apic_exit                        [Tracepoint event]
+
+  irq_vectorsirq_work_entry                         [Tracepoint event]
+
+  irq_vectorsirq_work_exit                          [Tracepoint event]
+
+  irq_vectorslocal_timer_entry                      [Tracepoint event]
+
+  irq_vectorslocal_timer_exit                       [Tracepoint event]
+
+  irq_vectorsreschedule_entry                       [Tracepoint event]
+
+  irq_vectorsreschedule_exit                        [Tracepoint event]
+
+  irq_vectorsspurious_apic_entry                    [Tracepoint event]
+
+  irq_vectorsspurious_apic_exit                     [Tracepoint event]
+
+  irq_vectorsthermal_apic_entry                     [Tracepoint event]
+
+  irq_vectorsthermal_apic_exit                      [Tracepoint event]
+
+  irq_vectorsthreshold_apic_entry                   [Tracepoint event]
+
+  irq_vectorsthreshold_apic_exit                    [Tracepoint event]
+
+  irq_vectorsvector_activate                        [Tracepoint event]
+
+  irq_vectorsvector_alloc                           [Tracepoint event]
+
+  irq_vectorsvector_alloc_managed                   [Tracepoint event]
+
+  irq_vectorsvector_clear                           [Tracepoint event]
+
+  irq_vectorsvector_config                          [Tracepoint event]
+
+  irq_vectorsvector_deactivate                      [Tracepoint event]
+
+  irq_vectorsvector_free_moved                      [Tracepoint event]
+
+  irq_vectorsvector_reserve                         [Tracepoint event]
+
+  irq_vectorsvector_reserve_managed                 [Tracepoint event]
+
+  irq_vectorsvector_setup                           [Tracepoint event]
+
+  irq_vectorsvector_teardown                        [Tracepoint event]
+
+  irq_vectorsvector_update                          [Tracepoint event]
+
+  irq_vectorsx86_platform_ipi_entry                 [Tracepoint event]
+
+  irq_vectorsx86_platform_ipi_exit                  [Tracepoint event]
+
+  jbd2jbd2_checkpoint                               [Tracepoint event]
+
+  jbd2jbd2_checkpoint_stats                         [Tracepoint event]
+
+  jbd2jbd2_commit_flushing                          [Tracepoint event]
+
+  jbd2jbd2_commit_locking                           [Tracepoint event]
+
+  jbd2jbd2_commit_logging                           [Tracepoint event]
+
+  jbd2jbd2_drop_transaction                         [Tracepoint event]
+
+  jbd2jbd2_end_commit                               [Tracepoint event]
+
+  jbd2jbd2_handle_extend                            [Tracepoint event]
+
+  jbd2jbd2_handle_restart                           [Tracepoint event]
+
+  jbd2jbd2_handle_start                             [Tracepoint event]
+
+  jbd2jbd2_handle_stats                             [Tracepoint event]
+
+  jbd2jbd2_lock_buffer_stall                        [Tracepoint event]
+
+  jbd2jbd2_run_stats                                [Tracepoint event]
+
+  jbd2jbd2_shrink_checkpoint_list                   [Tracepoint event]
+
+  jbd2jbd2_shrink_count                             [Tracepoint event]
+
+  jbd2jbd2_shrink_scan_enter                        [Tracepoint event]
+
+  jbd2jbd2_shrink_scan_exit                         [Tracepoint event]
+
+  jbd2jbd2_start_commit                             [Tracepoint event]
+
+  jbd2jbd2_submit_inode_data                        [Tracepoint event]
+
+  jbd2jbd2_update_log_tail                          [Tracepoint event]
+
+  jbd2jbd2_write_superblock                         [Tracepoint event]
+
+  kmemkfree                                         [Tracepoint event]
+
+  kmemkmalloc                                       [Tracepoint event]
+
+  kmemkmalloc_node                                  [Tracepoint event]
+
+  kmemkmem_cache_alloc                              [Tracepoint event]
+
+  kmemkmem_cache_alloc_node                         [Tracepoint event]
+
+  kmemkmem_cache_free                               [Tracepoint event]
+
+  kmemmm_page_alloc                                 [Tracepoint event]
+
+  kmemmm_page_alloc_extfrag                         [Tracepoint event]
+
+  kmemmm_page_alloc_zone_locked                     [Tracepoint event]
+
+  kmemmm_page_free                                  [Tracepoint event]
+
+  kmemmm_page_free_batched                          [Tracepoint event]
+
+  kmemmm_page_pcpu_drain                            [Tracepoint event]
+
+  kmemrss_stat                                      [Tracepoint event]
+
+  kvmkvm_ack_irq                                    [Tracepoint event]
+
+  kvmkvm_age_hva                                    [Tracepoint event]
+
+  kvmkvm_apic                                       [Tracepoint event]
+
+  kvmkvm_apic_accept_irq                            [Tracepoint event]
+
+  kvmkvm_apic_ipi                                   [Tracepoint event]
+
+  kvmkvm_apicv_update_request                       [Tracepoint event]
+
+  kvmkvm_async_pf_completed                         [Tracepoint event]
+
+  kvmkvm_async_pf_doublefault                       [Tracepoint event]
+
+  kvmkvm_async_pf_not_present                       [Tracepoint event]
+
+  kvmkvm_async_pf_ready                             [Tracepoint event]
+
+  kvmkvm_avic_ga_log                                [Tracepoint event]
+
+  kvmkvm_avic_incomplete_ipi                        [Tracepoint event]
+
+  kvmkvm_avic_unaccelerated_access                  [Tracepoint event]
+
+  kvmkvm_cpuid                                      [Tracepoint event]
+
+  kvmkvm_cr                                         [Tracepoint event]
+
+  kvmkvm_dirty_ring_exit                            [Tracepoint event]
+
+  kvmkvm_dirty_ring_push                            [Tracepoint event]
+
+  kvmkvm_dirty_ring_reset                           [Tracepoint event]
+
+  kvmkvm_emulate_insn                               [Tracepoint event]
+
+  kvmkvm_entry                                      [Tracepoint event]
+
+  kvmkvm_eoi                                        [Tracepoint event]
+
+  kvmkvm_exit                                       [Tracepoint event]
+
+  kvmkvm_fast_mmio                                  [Tracepoint event]
+
+  kvmkvm_fpu                                        [Tracepoint event]
+
+  kvmkvm_halt_poll_ns                               [Tracepoint event]
+
+  kvmkvm_hv_flush_tlb                               [Tracepoint event]
+
+  kvmkvm_hv_flush_tlb_ex                            [Tracepoint event]
+
+  kvmkvm_hv_hypercall                               [Tracepoint event]
+
+  kvmkvm_hv_hypercall_done                          [Tracepoint event]
+
+  kvmkvm_hv_notify_acked_sint                       [Tracepoint event]
+
+  kvmkvm_hv_send_ipi                                [Tracepoint event]
+
+  kvmkvm_hv_send_ipi_ex                             [Tracepoint event]
+
+  kvmkvm_hv_stimer_callback                         [Tracepoint event]
+
+  kvmkvm_hv_stimer_cleanup                          [Tracepoint event]
+
+  kvmkvm_hv_stimer_expiration                       [Tracepoint event]
+
+  kvmkvm_hv_stimer_set_config                       [Tracepoint event]
+
+  kvmkvm_hv_stimer_set_count                        [Tracepoint event]
+
+  kvmkvm_hv_stimer_start_one_shot                   [Tracepoint event]
+
+  kvmkvm_hv_stimer_start_periodic                   [Tracepoint event]
+
+  kvmkvm_hv_syndbg_get_msr                          [Tracepoint event]
+
+  kvmkvm_hv_syndbg_set_msr                          [Tracepoint event]
+
+  kvmkvm_hv_synic_send_eoi                          [Tracepoint event]
+
+  kvmkvm_hv_synic_set_irq                           [Tracepoint event]
+
+  kvmkvm_hv_synic_set_msr                           [Tracepoint event]
+
+  kvmkvm_hv_timer_state                             [Tracepoint event]
+
+  kvmkvm_hypercall                                  [Tracepoint event]
+
+  kvmkvm_inj_exception                              [Tracepoint event]
+
+  kvmkvm_inj_virq                                   [Tracepoint event]
+
+  kvmkvm_invlpga                                    [Tracepoint event]
+
+  kvmkvm_ioapic_delayed_eoi_inj                     [Tracepoint event]
+
+  kvmkvm_ioapic_set_irq                             [Tracepoint event]
+
+  kvmkvm_mmio                                       [Tracepoint event]
+
+  kvmkvm_msi_set_irq                                [Tracepoint event]
+
+  kvmkvm_msr                                        [Tracepoint event]
+
+  kvmkvm_nested_intercepts                          [Tracepoint event]
+
+  kvmkvm_nested_intr_vmexit                         [Tracepoint event]
+
+  kvmkvm_nested_vmenter_failed                      [Tracepoint event]
+
+  kvmkvm_nested_vmexit                              [Tracepoint event]
+
+  kvmkvm_nested_vmexit_inject                       [Tracepoint event]
+
+  kvmkvm_nested_vmrun                               [Tracepoint event]
+
+  kvmkvm_page_fault                                 [Tracepoint event]
+
+  kvmkvm_pi_irte_update                             [Tracepoint event]
+
+  kvmkvm_pic_set_irq                                [Tracepoint event]
+
+  kvmkvm_pio                                        [Tracepoint event]
+
+  kvmkvm_ple_window_update                          [Tracepoint event]
+
+  kvmkvm_pml_full                                   [Tracepoint event]
+
+  kvmkvm_pv_eoi                                     [Tracepoint event]
+
+  kvmkvm_pv_tlb_flush                               [Tracepoint event]
+
+  kvmkvm_pvclock_update                             [Tracepoint event]
+
+  kvmkvm_set_irq                                    [Tracepoint event]
+
+  kvmkvm_set_spte_hva                               [Tracepoint event]
+
+  kvmkvm_skinit                                     [Tracepoint event]
+
+  kvmkvm_smm_transition                             [Tracepoint event]
+
+  kvmkvm_test_age_hva                               [Tracepoint event]
+
+  kvmkvm_track_tsc                                  [Tracepoint event]
+
+  kvmkvm_try_async_get_page                         [Tracepoint event]
+
+  kvmkvm_unmap_hva_range                            [Tracepoint event]
+
+  kvmkvm_update_master_clock                        [Tracepoint event]
+
+  kvmkvm_userspace_exit                             [Tracepoint event]
+
+  kvmkvm_vcpu_wakeup                                [Tracepoint event]
+
+  kvmkvm_vmgexit_enter                              [Tracepoint event]
+
+  kvmkvm_vmgexit_exit                               [Tracepoint event]
+
+  kvmkvm_vmgexit_msr_protocol_enter                 [Tracepoint event]
+
+  kvmkvm_vmgexit_msr_protocol_exit                  [Tracepoint event]
+
+  kvmkvm_wait_lapic_expire                          [Tracepoint event]
+
+  kvmkvm_write_tsc_offset                           [Tracepoint event]
+
+  kvmkvm_xen_hypercall                              [Tracepoint event]
+
+  kvmvcpu_match_mmio                                [Tracepoint event]
+
+  kvmmmucheck_mmio_spte                             [Tracepoint event]
+
+  kvmmmufast_page_fault                             [Tracepoint event]
+
+  kvmmmuhandle_mmio_page_fault                      [Tracepoint event]
+
+  kvmmmukvm_mmu_get_page                            [Tracepoint event]
+
+  kvmmmukvm_mmu_pagetable_walk                      [Tracepoint event]
+
+  kvmmmukvm_mmu_paging_element                      [Tracepoint event]
+
+  kvmmmukvm_mmu_prepare_zap_page                    [Tracepoint event]
+
+  kvmmmukvm_mmu_set_accessed_bit                    [Tracepoint event]
+
+  kvmmmukvm_mmu_set_dirty_bit                       [Tracepoint event]
+
+  kvmmmukvm_mmu_set_spte                            [Tracepoint event]
+
+  kvmmmukvm_mmu_spte_requested                      [Tracepoint event]
+
+  kvmmmukvm_mmu_sync_page                           [Tracepoint event]
+
+  kvmmmukvm_mmu_unsync_page                         [Tracepoint event]
+
+  kvmmmukvm_mmu_walker_error                        [Tracepoint event]
+
+  kvmmmukvm_mmu_zap_all_fast                        [Tracepoint event]
+
+  kvmmmukvm_tdp_mmu_spte_changed                    [Tracepoint event]
+
+  kvmmmumark_mmio_spte                              [Tracepoint event]
+
+  libataata_eh_link_autopsy                         [Tracepoint event]
+
+  libataata_eh_link_autopsy_qc                      [Tracepoint event]
+
+  libataata_qc_complete_done                        [Tracepoint event]
+
+  libataata_qc_complete_failed                      [Tracepoint event]
+
+  libataata_qc_complete_internal                    [Tracepoint event]
+
+  libataata_qc_issue                                [Tracepoint event]
+
+  mcemce_record                                     [Tracepoint event]
+
+  mdiomdio_access                                   [Tracepoint event]
+
+  meimei_pci_cfg_read                               [Tracepoint event]
+
+  meimei_reg_read                                   [Tracepoint event]
+
+  meimei_reg_write                                  [Tracepoint event]
+
+  migratemm_migrate_pages                           [Tracepoint event]
+
+  migratemm_migrate_pages_start                     [Tracepoint event]
+
+  mlx5mlx5_esw_bridge_fdb_entry_cleanup             [Tracepoint event]
+
+  mlx5mlx5_esw_bridge_fdb_entry_init                [Tracepoint event]
+
+  mlx5mlx5_esw_bridge_fdb_entry_refresh             [Tracepoint event]
+
+  mlx5mlx5_esw_bridge_vlan_cleanup                  [Tracepoint event]
+
+  mlx5mlx5_esw_bridge_vlan_create                   [Tracepoint event]
+
+  mlx5mlx5_esw_bridge_vport_cleanup                 [Tracepoint event]
+
+  mlx5mlx5_esw_bridge_vport_init                    [Tracepoint event]
+
+  mlx5mlx5_esw_group_qos_config                     [Tracepoint event]
+
+  mlx5mlx5_esw_group_qos_create                     [Tracepoint event]
+
+  mlx5mlx5_esw_group_qos_destroy                    [Tracepoint event]
+
+  mlx5mlx5_esw_vport_qos_config                     [Tracepoint event]
+
+  mlx5mlx5_esw_vport_qos_create                     [Tracepoint event]
+
+  mlx5mlx5_esw_vport_qos_destroy                    [Tracepoint event]
+
+  mlx5mlx5_fs_add_fg                                [Tracepoint event]
+
+  mlx5mlx5_fs_add_ft                                [Tracepoint event]
+
+  mlx5mlx5_fs_add_rule                              [Tracepoint event]
+
+  mlx5mlx5_fs_del_fg                                [Tracepoint event]
+
+  mlx5mlx5_fs_del_ft                                [Tracepoint event]
+
+  mlx5mlx5_fs_del_fte                               [Tracepoint event]
+
+  mlx5mlx5_fs_del_rule                              [Tracepoint event]
+
+  mlx5mlx5_fs_set_fte                               [Tracepoint event]
+
+  mlx5mlx5_fw                                       [Tracepoint event]
+
+  mlx5mlx5e_configure_flower                        [Tracepoint event]
+
+  mlx5mlx5e_delete_flower                           [Tracepoint event]
+
+  mlx5mlx5e_rep_neigh_update                        [Tracepoint event]
+
+  mlx5mlx5e_stats_flower                            [Tracepoint event]
+
+  mlx5mlx5e_tc_update_neigh_used_value              [Tracepoint event]
+
+  mmapvm_unmapped_area                              [Tracepoint event]
+
+  mmap_lockmmap_lock_acquire_returned               [Tracepoint event]
+
+  mmap_lockmmap_lock_released                       [Tracepoint event]
+
+  mmap_lockmmap_lock_start_locking                  [Tracepoint event]
+
+  mmcmmc_request_done                               [Tracepoint event]
+
+  mmcmmc_request_start                              [Tracepoint event]
+
+  modulemodule_free                                 [Tracepoint event]
+
+  modulemodule_get                                  [Tracepoint event]
+
+  modulemodule_load                                 [Tracepoint event]
+
+  modulemodule_put                                  [Tracepoint event]
+
+  modulemodule_request                              [Tracepoint event]
+
+  mptcpack_update_msk                               [Tracepoint event]
+
+  mptcpget_mapping_status                           [Tracepoint event]
+
+  mptcpmptcp_subflow_get_send                       [Tracepoint event]
+
+  mptcpsubflow_check_data_avail                     [Tracepoint event]
+
+  msrrdpmc                                          [Tracepoint event]
+
+  msrread_msr                                       [Tracepoint event]
+
+  msrwrite_msr                                      [Tracepoint event]
+
+  napinapi_poll                                     [Tracepoint event]
+
+  neighneigh_cleanup_and_release                    [Tracepoint event]
+
+  neighneigh_create                                 [Tracepoint event]
+
+  neighneigh_event_send_dead                        [Tracepoint event]
+
+  neighneigh_event_send_done                        [Tracepoint event]
+
+  neighneigh_timer_handler                          [Tracepoint event]
+
+  neighneigh_update                                 [Tracepoint event]
+
+  neighneigh_update_done                            [Tracepoint event]
+
+  netnapi_gro_frags_entry                           [Tracepoint event]
+
+  netnapi_gro_frags_exit                            [Tracepoint event]
+
+  netnapi_gro_receive_entry                         [Tracepoint event]
+
+  netnapi_gro_receive_exit                          [Tracepoint event]
+
+  netnet_dev_queue                                  [Tracepoint event]
+
+  netnet_dev_start_xmit                             [Tracepoint event]
+
+  netnet_dev_xmit                                   [Tracepoint event]
+
+  netnet_dev_xmit_timeout                           [Tracepoint event]
+
+  netnetif_receive_skb                              [Tracepoint event]
+
+  netnetif_receive_skb_entry                        [Tracepoint event]
+
+  netnetif_receive_skb_exit                         [Tracepoint event]
+
+  netnetif_receive_skb_list_entry                   [Tracepoint event]
+
+  netnetif_receive_skb_list_exit                    [Tracepoint event]
+
+  netnetif_rx                                       [Tracepoint event]
+
+  netnetif_rx_entry                                 [Tracepoint event]
+
+  netnetif_rx_exit                                  [Tracepoint event]
+
+  netnetif_rx_ni_entry                              [Tracepoint event]
+
+  netnetif_rx_ni_exit                               [Tracepoint event]
+
+  netlinknetlink_extack                             [Tracepoint event]
+
+  nminmi_handler                                    [Tracepoint event]
+
+  oomcompact_retry                                  [Tracepoint event]
+
+  oomfinish_task_reaping                            [Tracepoint event]
+
+  oommark_victim                                    [Tracepoint event]
+
+  oomoom_score_adj_update                           [Tracepoint event]
+
+  oomreclaim_retry_zone                             [Tracepoint event]
+
+  oomskip_task_reaping                              [Tracepoint event]
+
+  oomstart_task_reaping                             [Tracepoint event]
+
+  oomwake_reaper                                    [Tracepoint event]
+
+  osnoiseirq_noise                                  [Tracepoint event]
+
+  osnoisenmi_noise                                  [Tracepoint event]
+
+  osnoisesample_threshold                           [Tracepoint event]
+
+  osnoisesoftirq_noise                              [Tracepoint event]
+
+  osnoisethread_noise                               [Tracepoint event]
+
+  page_isolationtest_pages_isolated                 [Tracepoint event]
+
+  page_poolpage_pool_release                        [Tracepoint event]
+
+  page_poolpage_pool_state_hold                     [Tracepoint event]
+
+  page_poolpage_pool_state_release                  [Tracepoint event]
+
+  page_poolpage_pool_update_nid                     [Tracepoint event]
+
+  pagemapmm_lru_activate                            [Tracepoint event]
+
+  pagemapmm_lru_insertion                           [Tracepoint event]
+
+  percpupercpu_alloc_percpu                         [Tracepoint event]
+
+  percpupercpu_alloc_percpu_fail                    [Tracepoint event]
+
+  percpupercpu_create_chunk                         [Tracepoint event]
+
+  percpupercpu_destroy_chunk                        [Tracepoint event]
+
+  percpupercpu_free_percpu                          [Tracepoint event]
+
+  powerclock_disable                                [Tracepoint event]
+
+  powerclock_enable                                 [Tracepoint event]
+
+  powerclock_set_rate                               [Tracepoint event]
+
+  powercpu_frequency                                [Tracepoint event]
+
+  powercpu_frequency_limits                         [Tracepoint event]
+
+  powercpu_idle                                     [Tracepoint event]
+
+  powerdev_pm_qos_add_request                       [Tracepoint event]
+
+  powerdev_pm_qos_remove_request                    [Tracepoint event]
+
+  powerdev_pm_qos_update_request                    [Tracepoint event]
+
+  powerdevice_pm_callback_end                       [Tracepoint event]
+
+  powerdevice_pm_callback_start                     [Tracepoint event]
+
+  powerpm_qos_add_request                           [Tracepoint event]
+
+  powerpm_qos_remove_request                        [Tracepoint event]
+
+  powerpm_qos_update_flags                          [Tracepoint event]
+
+  powerpm_qos_update_request                        [Tracepoint event]
+
+  powerpm_qos_update_target                         [Tracepoint event]
+
+  powerpower_domain_target                          [Tracepoint event]
+
+  powerpowernv_throttle                             [Tracepoint event]
+
+  powerpstate_sample                                [Tracepoint event]
+
+  powersuspend_resume                               [Tracepoint event]
+
+  powerwakeup_source_activate                       [Tracepoint event]
+
+  powerwakeup_source_deactivate                     [Tracepoint event]
+
+  printkconsole                                     [Tracepoint event]
+
+  pwmpwm_apply                                      [Tracepoint event]
+
+  pwmpwm_get                                        [Tracepoint event]
+
+  qdiscqdisc_create                                 [Tracepoint event]
+
+  qdiscqdisc_dequeue                                [Tracepoint event]
+
+  qdiscqdisc_destroy                                [Tracepoint event]
+
+  qdiscqdisc_enqueue                                [Tracepoint event]
+
+  qdiscqdisc_reset                                  [Tracepoint event]
+
+  rasaer_event                                      [Tracepoint event]
+
+  rasarm_event                                      [Tracepoint event]
+
+  rasextlog_mem_event                               [Tracepoint event]
+
+  rasmc_event                                       [Tracepoint event]
+
+  rasmemory_failure_event                           [Tracepoint event]
+
+  rasnon_standard_event                             [Tracepoint event]
+
+  raw_syscallssys_enter                             [Tracepoint event]
+
+  raw_syscallssys_exit                              [Tracepoint event]
+
+  rcurcu_stall_warning                              [Tracepoint event]
+
+  rcurcu_utilization                                [Tracepoint event]
+
+  rdma_corecq_alloc                                 [Tracepoint event]
+
+  rdma_corecq_alloc_error                           [Tracepoint event]
+
+  rdma_corecq_drain_complete                        [Tracepoint event]
+
+  rdma_corecq_free                                  [Tracepoint event]
+
+  rdma_corecq_modify                                [Tracepoint event]
+
+  rdma_corecq_poll                                  [Tracepoint event]
+
+  rdma_corecq_process                               [Tracepoint event]
+
+  rdma_corecq_reschedule                            [Tracepoint event]
+
+  rdma_corecq_schedule                              [Tracepoint event]
+
+  rdma_coremr_alloc                                 [Tracepoint event]
+
+  rdma_coremr_dereg                                 [Tracepoint event]
+
+  rdma_coremr_integ_alloc                           [Tracepoint event]
+
+  regmapregcache_drop_region                        [Tracepoint event]
+
+  regmapregcache_sync                               [Tracepoint event]
+
+  regmapregmap_async_complete_done                  [Tracepoint event]
+
+  regmapregmap_async_complete_start                 [Tracepoint event]
+
+  regmapregmap_async_io_complete                    [Tracepoint event]
+
+  regmapregmap_async_write_start                    [Tracepoint event]
+
+  regmapregmap_cache_bypass                         [Tracepoint event]
+
+  regmapregmap_cache_only                           [Tracepoint event]
+
+  regmapregmap_hw_read_done                         [Tracepoint event]
+
+  regmapregmap_hw_read_start                        [Tracepoint event]
+
+  regmapregmap_hw_write_done                        [Tracepoint event]
+
+  regmapregmap_hw_write_start                       [Tracepoint event]
+
+  regmapregmap_reg_read                             [Tracepoint event]
+
+  regmapregmap_reg_read_cache                       [Tracepoint event]
+
+  regmapregmap_reg_write                            [Tracepoint event]
+
+  regulatorregulator_bypass_disable                 [Tracepoint event]
+
+  regulatorregulator_bypass_disable_complete        [Tracepoint event]
+
+  regulatorregulator_bypass_enable                  [Tracepoint event]
+
+  regulatorregulator_bypass_enable_complete         [Tracepoint event]
+
+  regulatorregulator_disable                        [Tracepoint event]
+
+  regulatorregulator_disable_complete               [Tracepoint event]
+
+  regulatorregulator_enable                         [Tracepoint event]
+
+  regulatorregulator_enable_complete                [Tracepoint event]
+
+  regulatorregulator_enable_delay                   [Tracepoint event]
+
+  regulatorregulator_set_voltage                    [Tracepoint event]
+
+  regulatorregulator_set_voltage_complete           [Tracepoint event]
+
+  resctrlpseudo_lock_l2                             [Tracepoint event]
+
+  resctrlpseudo_lock_l3                             [Tracepoint event]
+
+  resctrlpseudo_lock_mem_latency                    [Tracepoint event]
+
+  rpmrpm_idle                                       [Tracepoint event]
+
+  rpmrpm_resume                                     [Tracepoint event]
+
+  rpmrpm_return_int                                 [Tracepoint event]
+
+  rpmrpm_suspend                                    [Tracepoint event]
+
+  rpmrpm_usage                                      [Tracepoint event]
+
+  rseqrseq_ip_fixup                                 [Tracepoint event]
+
+  rseqrseq_update                                   [Tracepoint event]
+
+  rtcrtc_alarm_irq_enable                           [Tracepoint event]
+
+  rtcrtc_irq_set_freq                               [Tracepoint event]
+
+  rtcrtc_irq_set_state                              [Tracepoint event]
+
+  rtcrtc_read_alarm                                 [Tracepoint event]
+
+  rtcrtc_read_offset                                [Tracepoint event]
+
+  rtcrtc_read_time                                  [Tracepoint event]
+
+  rtcrtc_set_alarm                                  [Tracepoint event]
+
+  rtcrtc_set_offset                                 [Tracepoint event]
+
+  rtcrtc_set_time                                   [Tracepoint event]
+
+  rtcrtc_timer_dequeue                              [Tracepoint event]
+
+  rtcrtc_timer_enqueue                              [Tracepoint event]
+
+  rtcrtc_timer_fired                                [Tracepoint event]
+
+  schedsched_kthread_stop                           [Tracepoint event]
+
+  schedsched_kthread_stop_ret                       [Tracepoint event]
+
+  schedsched_kthread_work_execute_end               [Tracepoint event]
+
+  schedsched_kthread_work_execute_start             [Tracepoint event]
+
+  schedsched_kthread_work_queue_work                [Tracepoint event]
+
+  schedsched_migrate_task                           [Tracepoint event]
+
+  schedsched_move_numa                              [Tracepoint event]
+
+  schedsched_pi_setprio                             [Tracepoint event]
+
+  schedsched_process_exec                           [Tracepoint event]
+
+  schedsched_process_exit                           [Tracepoint event]
+
+  schedsched_process_fork                           [Tracepoint event]
+
+  schedsched_process_free                           [Tracepoint event]
+
+  schedsched_process_hang                           [Tracepoint event]
+
+  schedsched_process_wait                           [Tracepoint event]
+
+  schedsched_stat_blocked                           [Tracepoint event]
+
+  schedsched_stat_iowait                            [Tracepoint event]
+
+  schedsched_stat_runtime                           [Tracepoint event]
+
+  schedsched_stat_sleep                             [Tracepoint event]
+
+  schedsched_stat_wait                              [Tracepoint event]
+
+  schedsched_stick_numa                             [Tracepoint event]
+
+  schedsched_swap_numa                              [Tracepoint event]
+
+  schedsched_switch                                 [Tracepoint event]
+
+  schedsched_wait_task                              [Tracepoint event]
+
+  schedsched_wake_idle_without_ipi                  [Tracepoint event]
+
+  schedsched_wakeup                                 [Tracepoint event]
+
+  schedsched_wakeup_new                             [Tracepoint event]
+
+  schedsched_waking                                 [Tracepoint event]
+
+  scsiscsi_dispatch_cmd_done                        [Tracepoint event]
+
+  scsiscsi_dispatch_cmd_error                       [Tracepoint event]
+
+  scsiscsi_dispatch_cmd_start                       [Tracepoint event]
+
+  scsiscsi_dispatch_cmd_timeout                     [Tracepoint event]
+
+  scsiscsi_eh_wakeup                                [Tracepoint event]
+
+  signalsignal_deliver                              [Tracepoint event]
+
+  signalsignal_generate                             [Tracepoint event]
+
+  skbconsume_skb                                    [Tracepoint event]
+
+  skbkfree_skb                                      [Tracepoint event]
+
+  skbskb_copy_datagram_iovec                        [Tracepoint event]
+
+  smbussmbus_read                                   [Tracepoint event]
+
+  smbussmbus_reply                                  [Tracepoint event]
+
+  smbussmbus_result                                 [Tracepoint event]
+
+  smbussmbus_write                                  [Tracepoint event]
+
+  sockinet_sk_error_report                          [Tracepoint event]
+
+  sockinet_sock_set_state                           [Tracepoint event]
+
+  socksock_exceed_buf_limit                         [Tracepoint event]
+
+  socksock_rcvqueue_full                            [Tracepoint event]
+
+  spispi_controller_busy                            [Tracepoint event]
+
+  spispi_controller_idle                            [Tracepoint event]
+
+  spispi_message_done                               [Tracepoint event]
+
+  spispi_message_start                              [Tracepoint event]
+
+  spispi_message_submit                             [Tracepoint event]
+
+  spispi_set_cs                                     [Tracepoint event]
+
+  spispi_setup                                      [Tracepoint event]
+
+  spispi_transfer_start                             [Tracepoint event]
+
+  spispi_transfer_stop                              [Tracepoint event]
+
+  swiotlbswiotlb_bounced                            [Tracepoint event]
+
+  sync_tracesync_timeline                           [Tracepoint event]
+
+  syscallssys_enter_accept                          [Tracepoint event]
+
+  syscallssys_enter_accept4                         [Tracepoint event]
+
+  syscallssys_enter_access                          [Tracepoint event]
+
+  syscallssys_enter_acct                            [Tracepoint event]
+
+  syscallssys_enter_add_key                         [Tracepoint event]
+
+  syscallssys_enter_adjtimex                        [Tracepoint event]
+
+  syscallssys_enter_alarm                           [Tracepoint event]
+
+  syscallssys_enter_arch_prctl                      [Tracepoint event]
+
+  syscallssys_enter_bind                            [Tracepoint event]
+
+  syscallssys_enter_bpf                             [Tracepoint event]
+
+  syscallssys_enter_brk                             [Tracepoint event]
+
+  syscallssys_enter_capget                          [Tracepoint event]
+
+  syscallssys_enter_capset                          [Tracepoint event]
+
+  syscallssys_enter_chdir                           [Tracepoint event]
+
+  syscallssys_enter_chmod                           [Tracepoint event]
+
+  syscallssys_enter_chown                           [Tracepoint event]
+
+  syscallssys_enter_chroot                          [Tracepoint event]
+
+  syscallssys_enter_clock_adjtime                   [Tracepoint event]
+
+  syscallssys_enter_clock_getres                    [Tracepoint event]
+
+  syscallssys_enter_clock_gettime                   [Tracepoint event]
+
+  syscallssys_enter_clock_nanosleep                 [Tracepoint event]
+
+  syscallssys_enter_clock_settime                   [Tracepoint event]
+
+  syscallssys_enter_clone                           [Tracepoint event]
+
+  syscallssys_enter_clone3                          [Tracepoint event]
+
+  syscallssys_enter_close                           [Tracepoint event]
+
+  syscallssys_enter_close_range                     [Tracepoint event]
+
+  syscallssys_enter_connect                         [Tracepoint event]
+
+  syscallssys_enter_copy_file_range                 [Tracepoint event]
+
+  syscallssys_enter_creat                           [Tracepoint event]
+
+  syscallssys_enter_delete_module                   [Tracepoint event]
+
+  syscallssys_enter_dup                             [Tracepoint event]
+
+  syscallssys_enter_dup2                            [Tracepoint event]
+
+  syscallssys_enter_dup3                            [Tracepoint event]
+
+  syscallssys_enter_epoll_create                    [Tracepoint event]
+
+  syscallssys_enter_epoll_create1                   [Tracepoint event]
+
+  syscallssys_enter_epoll_ctl                       [Tracepoint event]
+
+  syscallssys_enter_epoll_pwait                     [Tracepoint event]
+
+  syscallssys_enter_epoll_pwait2                    [Tracepoint event]
+
+  syscallssys_enter_epoll_wait                      [Tracepoint event]
+
+  syscallssys_enter_eventfd                         [Tracepoint event]
+
+  syscallssys_enter_eventfd2                        [Tracepoint event]
+
+  syscallssys_enter_execve                          [Tracepoint event]
+
+  syscallssys_enter_execveat                        [Tracepoint event]
+
+  syscallssys_enter_exit                            [Tracepoint event]
+
+  syscallssys_enter_exit_group                      [Tracepoint event]
+
+  syscallssys_enter_faccessat                       [Tracepoint event]
+
+  syscallssys_enter_faccessat2                      [Tracepoint event]
+
+  syscallssys_enter_fadvise64                       [Tracepoint event]
+
+  syscallssys_enter_fallocate                       [Tracepoint event]
+
+  syscallssys_enter_fanotify_init                   [Tracepoint event]
+
+  syscallssys_enter_fanotify_mark                   [Tracepoint event]
+
+  syscallssys_enter_fchdir                          [Tracepoint event]
+
+  syscallssys_enter_fchmod                          [Tracepoint event]
+
+  syscallssys_enter_fchmodat                        [Tracepoint event]
+
+  syscallssys_enter_fchown                          [Tracepoint event]
+
+  syscallssys_enter_fchownat                        [Tracepoint event]
+
+  syscallssys_enter_fcntl                           [Tracepoint event]
+
+  syscallssys_enter_fdatasync                       [Tracepoint event]
+
+  syscallssys_enter_fgetxattr                       [Tracepoint event]
+
+  syscallssys_enter_finit_module                    [Tracepoint event]
+
+  syscallssys_enter_flistxattr                      [Tracepoint event]
+
+  syscallssys_enter_flock                           [Tracepoint event]
+
+  syscallssys_enter_fork                            [Tracepoint event]
+
+  syscallssys_enter_fremovexattr                    [Tracepoint event]
+
+  syscallssys_enter_fsconfig                        [Tracepoint event]
+
+  syscallssys_enter_fsetxattr                       [Tracepoint event]
+
+  syscallssys_enter_fsmount                         [Tracepoint event]
+
+  syscallssys_enter_fsopen                          [Tracepoint event]
+
+  syscallssys_enter_fspick                          [Tracepoint event]
+
+  syscallssys_enter_fstatfs                         [Tracepoint event]
+
+  syscallssys_enter_fsync                           [Tracepoint event]
+
+  syscallssys_enter_ftruncate                       [Tracepoint event]
+
+  syscallssys_enter_futex                           [Tracepoint event]
+
+  syscallssys_enter_futimesat                       [Tracepoint event]
+
+  syscallssys_enter_get_mempolicy                   [Tracepoint event]
+
+  syscallssys_enter_get_robust_list                 [Tracepoint event]
+
+  syscallssys_enter_getcpu                          [Tracepoint event]
+
+  syscallssys_enter_getcwd                          [Tracepoint event]
+
+  syscallssys_enter_getdents                        [Tracepoint event]
+
+  syscallssys_enter_getdents64                      [Tracepoint event]
+
+  syscallssys_enter_getegid                         [Tracepoint event]
+
+  syscallssys_enter_geteuid                         [Tracepoint event]
+
+  syscallssys_enter_getgid                          [Tracepoint event]
+
+  syscallssys_enter_getgroups                       [Tracepoint event]
+
+  syscallssys_enter_getitimer                       [Tracepoint event]
+
+  syscallssys_enter_getpeername                     [Tracepoint event]
+
+  syscallssys_enter_getpgid                         [Tracepoint event]
+
+  syscallssys_enter_getpgrp                         [Tracepoint event]
+
+  syscallssys_enter_getpid                          [Tracepoint event]
+
+  syscallssys_enter_getppid                         [Tracepoint event]
+
+  syscallssys_enter_getpriority                     [Tracepoint event]
+
+  syscallssys_enter_getrandom                       [Tracepoint event]
+
+  syscallssys_enter_getresgid                       [Tracepoint event]
+
+  syscallssys_enter_getresuid                       [Tracepoint event]
+
+  syscallssys_enter_getrlimit                       [Tracepoint event]
+
+  syscallssys_enter_getrusage                       [Tracepoint event]
+
+  syscallssys_enter_getsid                          [Tracepoint event]
+
+  syscallssys_enter_getsockname                     [Tracepoint event]
+
+  syscallssys_enter_getsockopt                      [Tracepoint event]
+
+  syscallssys_enter_gettid                          [Tracepoint event]
+
+  syscallssys_enter_gettimeofday                    [Tracepoint event]
+
+  syscallssys_enter_getuid                          [Tracepoint event]
+
+  syscallssys_enter_getxattr                        [Tracepoint event]
+
+  syscallssys_enter_init_module                     [Tracepoint event]
+
+  syscallssys_enter_inotify_add_watch               [Tracepoint event]
+
+  syscallssys_enter_inotify_init                    [Tracepoint event]
+
+  syscallssys_enter_inotify_init1                   [Tracepoint event]
+
+  syscallssys_enter_inotify_rm_watch                [Tracepoint event]
+
+  syscallssys_enter_io_cancel                       [Tracepoint event]
+
+  syscallssys_enter_io_destroy                      [Tracepoint event]
+
+  syscallssys_enter_io_getevents                    [Tracepoint event]
+
+  syscallssys_enter_io_pgetevents                   [Tracepoint event]
+
+  syscallssys_enter_io_setup                        [Tracepoint event]
+
+  syscallssys_enter_io_submit                       [Tracepoint event]
+
+  syscallssys_enter_io_uring_enter                  [Tracepoint event]
+
+  syscallssys_enter_io_uring_register               [Tracepoint event]
+
+  syscallssys_enter_io_uring_setup                  [Tracepoint event]
+
+  syscallssys_enter_ioctl                           [Tracepoint event]
+
+  syscallssys_enter_ioperm                          [Tracepoint event]
+
+  syscallssys_enter_iopl                            [Tracepoint event]
+
+  syscallssys_enter_ioprio_get                      [Tracepoint event]
+
+  syscallssys_enter_ioprio_set                      [Tracepoint event]
+
+  syscallssys_enter_kcmp                            [Tracepoint event]
+
+  syscallssys_enter_kexec_file_load                 [Tracepoint event]
+
+  syscallssys_enter_kexec_load                      [Tracepoint event]
+
+  syscallssys_enter_keyctl                          [Tracepoint event]
+
+  syscallssys_enter_kill                            [Tracepoint event]
+
+  syscallssys_enter_landlock_add_rule               [Tracepoint event]
+
+  syscallssys_enter_landlock_create_ruleset         [Tracepoint event]
+
+  syscallssys_enter_landlock_restrict_self          [Tracepoint event]
+
+  syscallssys_enter_lchown                          [Tracepoint event]
+
+  syscallssys_enter_lgetxattr                       [Tracepoint event]
+
+  syscallssys_enter_link                            [Tracepoint event]
+
+  syscallssys_enter_linkat                          [Tracepoint event]
+
+  syscallssys_enter_listen                          [Tracepoint event]
+
+  syscallssys_enter_listxattr                       [Tracepoint event]
+
+  syscallssys_enter_llistxattr                      [Tracepoint event]
+
+  syscallssys_enter_lremovexattr                    [Tracepoint event]
+
+  syscallssys_enter_lseek                           [Tracepoint event]
+
+  syscallssys_enter_lsetxattr                       [Tracepoint event]
+
+  syscallssys_enter_madvise                         [Tracepoint event]
+
+  syscallssys_enter_mbind                           [Tracepoint event]
+
+  syscallssys_enter_membarrier                      [Tracepoint event]
+
+  syscallssys_enter_memfd_create                    [Tracepoint event]
+
+  syscallssys_enter_memfd_secret                    [Tracepoint event]
+
+  syscallssys_enter_migrate_pages                   [Tracepoint event]
+
+  syscallssys_enter_mincore                         [Tracepoint event]
+
+  syscallssys_enter_mkdir                           [Tracepoint event]
+
+  syscallssys_enter_mkdirat                         [Tracepoint event]
+
+  syscallssys_enter_mknod                           [Tracepoint event]
+
+  syscallssys_enter_mknodat                         [Tracepoint event]
+
+  syscallssys_enter_mlock                           [Tracepoint event]
+
+  syscallssys_enter_mlock2                          [Tracepoint event]
+
+  syscallssys_enter_mlockall                        [Tracepoint event]
+
+  syscallssys_enter_mmap                            [Tracepoint event]
+
+  syscallssys_enter_modify_ldt                      [Tracepoint event]
+
+  syscallssys_enter_mount                           [Tracepoint event]
+
+  syscallssys_enter_mount_setattr                   [Tracepoint event]
+
+  syscallssys_enter_move_mount                      [Tracepoint event]
+
+  syscallssys_enter_move_pages                      [Tracepoint event]
+
+  syscallssys_enter_mprotect                        [Tracepoint event]
+
+  syscallssys_enter_mq_getsetattr                   [Tracepoint event]
+
+  syscallssys_enter_mq_notify                       [Tracepoint event]
+
+  syscallssys_enter_mq_open                         [Tracepoint event]
+
+  syscallssys_enter_mq_timedreceive                 [Tracepoint event]
+
+  syscallssys_enter_mq_timedsend                    [Tracepoint event]
+
+  syscallssys_enter_mq_unlink                       [Tracepoint event]
+
+  syscallssys_enter_mremap                          [Tracepoint event]
+
+  syscallssys_enter_msgctl                          [Tracepoint event]
+
+  syscallssys_enter_msgget                          [Tracepoint event]
+
+  syscallssys_enter_msgrcv                          [Tracepoint event]
+
+  syscallssys_enter_msgsnd                          [Tracepoint event]
+
+  syscallssys_enter_msync                           [Tracepoint event]
+
+  syscallssys_enter_munlock                         [Tracepoint event]
+
+  syscallssys_enter_munlockall                      [Tracepoint event]
+
+  syscallssys_enter_munmap                          [Tracepoint event]
+
+  syscallssys_enter_name_to_handle_at               [Tracepoint event]
+
+  syscallssys_enter_nanosleep                       [Tracepoint event]
+
+  syscallssys_enter_newfstat                        [Tracepoint event]
+
+  syscallssys_enter_newfstatat                      [Tracepoint event]
+
+  syscallssys_enter_newlstat                        [Tracepoint event]
+
+  syscallssys_enter_newstat                         [Tracepoint event]
+
+  syscallssys_enter_newuname                        [Tracepoint event]
+
+  syscallssys_enter_open                            [Tracepoint event]
+
+  syscallssys_enter_open_by_handle_at               [Tracepoint event]
+
+  syscallssys_enter_open_tree                       [Tracepoint event]
+
+  syscallssys_enter_openat                          [Tracepoint event]
+
+  syscallssys_enter_openat2                         [Tracepoint event]
+
+  syscallssys_enter_pause                           [Tracepoint event]
+
+  syscallssys_enter_perf_event_open                 [Tracepoint event]
+
+  syscallssys_enter_personality                     [Tracepoint event]
+
+  syscallssys_enter_pidfd_getfd                     [Tracepoint event]
+
+  syscallssys_enter_pidfd_open                      [Tracepoint event]
+
+  syscallssys_enter_pidfd_send_signal               [Tracepoint event]
+
+  syscallssys_enter_pipe                            [Tracepoint event]
+
+  syscallssys_enter_pipe2                           [Tracepoint event]
+
+  syscallssys_enter_pivot_root                      [Tracepoint event]
+
+  syscallssys_enter_pkey_alloc                      [Tracepoint event]
+
+  syscallssys_enter_pkey_free                       [Tracepoint event]
+
+  syscallssys_enter_pkey_mprotect                   [Tracepoint event]
+
+  syscallssys_enter_poll                            [Tracepoint event]
+
+  syscallssys_enter_ppoll                           [Tracepoint event]
+
+  syscallssys_enter_prctl                           [Tracepoint event]
+
+  syscallssys_enter_pread64                         [Tracepoint event]
+
+  syscallssys_enter_preadv                          [Tracepoint event]
+
+  syscallssys_enter_preadv2                         [Tracepoint event]
+
+  syscallssys_enter_prlimit64                       [Tracepoint event]
+
+  syscallssys_enter_process_madvise                 [Tracepoint event]
+
+  syscallssys_enter_process_mrelease                [Tracepoint event]
+
+  syscallssys_enter_process_vm_readv                [Tracepoint event]
+
+  syscallssys_enter_process_vm_writev               [Tracepoint event]
+
+  syscallssys_enter_pselect6                        [Tracepoint event]
+
+  syscallssys_enter_ptrace                          [Tracepoint event]
+
+  syscallssys_enter_pwrite64                        [Tracepoint event]
+
+  syscallssys_enter_pwritev                         [Tracepoint event]
+
+  syscallssys_enter_pwritev2                        [Tracepoint event]
+
+  syscallssys_enter_quotactl                        [Tracepoint event]
+
+  syscallssys_enter_quotactl_fd                     [Tracepoint event]
+
+  syscallssys_enter_read                            [Tracepoint event]
+
+  syscallssys_enter_readahead                       [Tracepoint event]
+
+  syscallssys_enter_readlink                        [Tracepoint event]
+
+  syscallssys_enter_readlinkat                      [Tracepoint event]
+
+  syscallssys_enter_readv                           [Tracepoint event]
+
+  syscallssys_enter_reboot                          [Tracepoint event]
+
+  syscallssys_enter_recvfrom                        [Tracepoint event]
+
+  syscallssys_enter_recvmmsg                        [Tracepoint event]
+
+  syscallssys_enter_recvmsg                         [Tracepoint event]
+
+  syscallssys_enter_remap_file_pages                [Tracepoint event]
+
+  syscallssys_enter_removexattr                     [Tracepoint event]
+
+  syscallssys_enter_rename                          [Tracepoint event]
+
+  syscallssys_enter_renameat                        [Tracepoint event]
+
+  syscallssys_enter_renameat2                       [Tracepoint event]
+
+  syscallssys_enter_request_key                     [Tracepoint event]
+
+  syscallssys_enter_restart_syscall                 [Tracepoint event]
+
+  syscallssys_enter_rmdir                           [Tracepoint event]
+
+  syscallssys_enter_rseq                            [Tracepoint event]
+
+  syscallssys_enter_rt_sigaction                    [Tracepoint event]
+
+  syscallssys_enter_rt_sigpending                   [Tracepoint event]
+
+  syscallssys_enter_rt_sigprocmask                  [Tracepoint event]
+
+  syscallssys_enter_rt_sigqueueinfo                 [Tracepoint event]
+
+  syscallssys_enter_rt_sigreturn                    [Tracepoint event]
+
+  syscallssys_enter_rt_sigsuspend                   [Tracepoint event]
+
+  syscallssys_enter_rt_sigtimedwait                 [Tracepoint event]
+
+  syscallssys_enter_rt_tgsigqueueinfo               [Tracepoint event]
+
+  syscallssys_enter_sched_get_priority_max          [Tracepoint event]
+
+  syscallssys_enter_sched_get_priority_min          [Tracepoint event]
+
+  syscallssys_enter_sched_getaffinity               [Tracepoint event]
+
+  syscallssys_enter_sched_getattr                   [Tracepoint event]
+
+  syscallssys_enter_sched_getparam                  [Tracepoint event]
+
+  syscallssys_enter_sched_getscheduler              [Tracepoint event]
+
+  syscallssys_enter_sched_rr_get_interval           [Tracepoint event]
+
+  syscallssys_enter_sched_setaffinity               [Tracepoint event]
+
+  syscallssys_enter_sched_setattr                   [Tracepoint event]
+
+  syscallssys_enter_sched_setparam                  [Tracepoint event]
+
+  syscallssys_enter_sched_setscheduler              [Tracepoint event]
+
+  syscallssys_enter_sched_yield                     [Tracepoint event]
+
+  syscallssys_enter_seccomp                         [Tracepoint event]
+
+  syscallssys_enter_select                          [Tracepoint event]
+
+  syscallssys_enter_semctl                          [Tracepoint event]
+
+  syscallssys_enter_semget                          [Tracepoint event]
+
+  syscallssys_enter_semop                           [Tracepoint event]
+
+  syscallssys_enter_semtimedop                      [Tracepoint event]
+
+  syscallssys_enter_sendfile64                      [Tracepoint event]
+
+  syscallssys_enter_sendmmsg                        [Tracepoint event]
+
+  syscallssys_enter_sendmsg                         [Tracepoint event]
+
+  syscallssys_enter_sendto                          [Tracepoint event]
+
+  syscallssys_enter_set_mempolicy                   [Tracepoint event]
+
+  syscallssys_enter_set_robust_list                 [Tracepoint event]
+
+  syscallssys_enter_set_tid_address                 [Tracepoint event]
+
+  syscallssys_enter_setdomainname                   [Tracepoint event]
+
+  syscallssys_enter_setfsgid                        [Tracepoint event]
+
+  syscallssys_enter_setfsuid                        [Tracepoint event]
+
+  syscallssys_enter_setgid                          [Tracepoint event]
+
+  syscallssys_enter_setgroups                       [Tracepoint event]
+
+  syscallssys_enter_sethostname                     [Tracepoint event]
+
+  syscallssys_enter_setitimer                       [Tracepoint event]
+
+  syscallssys_enter_setns                           [Tracepoint event]
+
+  syscallssys_enter_setpgid                         [Tracepoint event]
+
+  syscallssys_enter_setpriority                     [Tracepoint event]
+
+  syscallssys_enter_setregid                        [Tracepoint event]
+
+  syscallssys_enter_setresgid                       [Tracepoint event]
+
+  syscallssys_enter_setresuid                       [Tracepoint event]
+
+  syscallssys_enter_setreuid                        [Tracepoint event]
+
+  syscallssys_enter_setrlimit                       [Tracepoint event]
+
+  syscallssys_enter_setsid                          [Tracepoint event]
+
+  syscallssys_enter_setsockopt                      [Tracepoint event]
+
+  syscallssys_enter_settimeofday                    [Tracepoint event]
+
+  syscallssys_enter_setuid                          [Tracepoint event]
+
+  syscallssys_enter_setxattr                        [Tracepoint event]
+
+  syscallssys_enter_shmat                           [Tracepoint event]
+
+  syscallssys_enter_shmctl                          [Tracepoint event]
+
+  syscallssys_enter_shmdt                           [Tracepoint event]
+
+  syscallssys_enter_shmget                          [Tracepoint event]
+
+  syscallssys_enter_shutdown                        [Tracepoint event]
+
+  syscallssys_enter_sigaltstack                     [Tracepoint event]
+
+  syscallssys_enter_signalfd                        [Tracepoint event]
+
+  syscallssys_enter_signalfd4                       [Tracepoint event]
+
+  syscallssys_enter_socket                          [Tracepoint event]
+
+  syscallssys_enter_socketpair                      [Tracepoint event]
+
+  syscallssys_enter_splice                          [Tracepoint event]
+
+  syscallssys_enter_statfs                          [Tracepoint event]
+
+  syscallssys_enter_statx                           [Tracepoint event]
+
+  syscallssys_enter_swapoff                         [Tracepoint event]
+
+  syscallssys_enter_swapon                          [Tracepoint event]
+
+  syscallssys_enter_symlink                         [Tracepoint event]
+
+  syscallssys_enter_symlinkat                       [Tracepoint event]
+
+  syscallssys_enter_sync                            [Tracepoint event]
+
+  syscallssys_enter_sync_file_range                 [Tracepoint event]
+
+  syscallssys_enter_syncfs                          [Tracepoint event]
+
+  syscallssys_enter_sysfs                           [Tracepoint event]
+
+  syscallssys_enter_sysinfo                         [Tracepoint event]
+
+  syscallssys_enter_syslog                          [Tracepoint event]
+
+  syscallssys_enter_tee                             [Tracepoint event]
+
+  syscallssys_enter_tgkill                          [Tracepoint event]
+
+  syscallssys_enter_time                            [Tracepoint event]
+
+  syscallssys_enter_timer_create                    [Tracepoint event]
+
+  syscallssys_enter_timer_delete                    [Tracepoint event]
+
+  syscallssys_enter_timer_getoverrun                [Tracepoint event]
+
+  syscallssys_enter_timer_gettime                   [Tracepoint event]
+
+  syscallssys_enter_timer_settime                   [Tracepoint event]
+
+  syscallssys_enter_timerfd_create                  [Tracepoint event]
+
+  syscallssys_enter_timerfd_gettime                 [Tracepoint event]
+
+  syscallssys_enter_timerfd_settime                 [Tracepoint event]
+
+  syscallssys_enter_times                           [Tracepoint event]
+
+  syscallssys_enter_tkill                           [Tracepoint event]
+
+  syscallssys_enter_truncate                        [Tracepoint event]
+
+  syscallssys_enter_umask                           [Tracepoint event]
+
+  syscallssys_enter_umount                          [Tracepoint event]
+
+  syscallssys_enter_unlink                          [Tracepoint event]
+
+  syscallssys_enter_unlinkat                        [Tracepoint event]
+
+  syscallssys_enter_unshare                         [Tracepoint event]
+
+  syscallssys_enter_userfaultfd                     [Tracepoint event]
+
+  syscallssys_enter_ustat                           [Tracepoint event]
+
+  syscallssys_enter_utime                           [Tracepoint event]
+
+  syscallssys_enter_utimensat                       [Tracepoint event]
+
+  syscallssys_enter_utimes                          [Tracepoint event]
+
+  syscallssys_enter_vfork                           [Tracepoint event]
+
+  syscallssys_enter_vhangup                         [Tracepoint event]
+
+  syscallssys_enter_vmsplice                        [Tracepoint event]
+
+  syscallssys_enter_wait4                           [Tracepoint event]
+
+  syscallssys_enter_waitid                          [Tracepoint event]
+
+  syscallssys_enter_write                           [Tracepoint event]
+
+  syscallssys_enter_writev                          [Tracepoint event]
+
+  syscallssys_exit_accept                           [Tracepoint event]
+
+  syscallssys_exit_accept4                          [Tracepoint event]
+
+  syscallssys_exit_access                           [Tracepoint event]
+
+  syscallssys_exit_acct                             [Tracepoint event]
+
+  syscallssys_exit_add_key                          [Tracepoint event]
+
+  syscallssys_exit_adjtimex                         [Tracepoint event]
+
+  syscallssys_exit_alarm                            [Tracepoint event]
+
+  syscallssys_exit_arch_prctl                       [Tracepoint event]
+
+  syscallssys_exit_bind                             [Tracepoint event]
+
+  syscallssys_exit_bpf                              [Tracepoint event]
+
+  syscallssys_exit_brk                              [Tracepoint event]
+
+  syscallssys_exit_capget                           [Tracepoint event]
+
+  syscallssys_exit_capset                           [Tracepoint event]
+
+  syscallssys_exit_chdir                            [Tracepoint event]
+
+  syscallssys_exit_chmod                            [Tracepoint event]
+
+  syscallssys_exit_chown                            [Tracepoint event]
+
+  syscallssys_exit_chroot                           [Tracepoint event]
+
+  syscallssys_exit_clock_adjtime                    [Tracepoint event]
+
+  syscallssys_exit_clock_getres                     [Tracepoint event]
+
+  syscallssys_exit_clock_gettime                    [Tracepoint event]
+
+  syscallssys_exit_clock_nanosleep                  [Tracepoint event]
+
+  syscallssys_exit_clock_settime                    [Tracepoint event]
+
+  syscallssys_exit_clone                            [Tracepoint event]
+
+  syscallssys_exit_clone3                           [Tracepoint event]
+
+  syscallssys_exit_close                            [Tracepoint event]
+
+  syscallssys_exit_close_range                      [Tracepoint event]
+
+  syscallssys_exit_connect                          [Tracepoint event]
+
+  syscallssys_exit_copy_file_range                  [Tracepoint event]
+
+  syscallssys_exit_creat                            [Tracepoint event]
+
+  syscallssys_exit_delete_module                    [Tracepoint event]
+
+  syscallssys_exit_dup                              [Tracepoint event]
+
+  syscallssys_exit_dup2                             [Tracepoint event]
+
+  syscallssys_exit_dup3                             [Tracepoint event]
+
+  syscallssys_exit_epoll_create                     [Tracepoint event]
+
+  syscallssys_exit_epoll_create1                    [Tracepoint event]
+
+  syscallssys_exit_epoll_ctl                        [Tracepoint event]
+
+  syscallssys_exit_epoll_pwait                      [Tracepoint event]
+
+  syscallssys_exit_epoll_pwait2                     [Tracepoint event]
+
+  syscallssys_exit_epoll_wait                       [Tracepoint event]
+
+  syscallssys_exit_eventfd                          [Tracepoint event]
+
+  syscallssys_exit_eventfd2                         [Tracepoint event]
+
+  syscallssys_exit_execve                           [Tracepoint event]
+
+  syscallssys_exit_execveat                         [Tracepoint event]
+
+  syscallssys_exit_exit                             [Tracepoint event]
+
+  syscallssys_exit_exit_group                       [Tracepoint event]
+
+  syscallssys_exit_faccessat                        [Tracepoint event]
+
+  syscallssys_exit_faccessat2                       [Tracepoint event]
+
+  syscallssys_exit_fadvise64                        [Tracepoint event]
+
+  syscallssys_exit_fallocate                        [Tracepoint event]
+
+  syscallssys_exit_fanotify_init                    [Tracepoint event]
+
+  syscallssys_exit_fanotify_mark                    [Tracepoint event]
+
+  syscallssys_exit_fchdir                           [Tracepoint event]
+
+  syscallssys_exit_fchmod                           [Tracepoint event]
+
+  syscallssys_exit_fchmodat                         [Tracepoint event]
+
+  syscallssys_exit_fchown                           [Tracepoint event]
+
+  syscallssys_exit_fchownat                         [Tracepoint event]
+
+  syscallssys_exit_fcntl                            [Tracepoint event]
+
+  syscallssys_exit_fdatasync                        [Tracepoint event]
+
+  syscallssys_exit_fgetxattr                        [Tracepoint event]
+
+  syscallssys_exit_finit_module                     [Tracepoint event]
+
+  syscallssys_exit_flistxattr                       [Tracepoint event]
+
+  syscallssys_exit_flock                            [Tracepoint event]
+
+  syscallssys_exit_fork                             [Tracepoint event]
+
+  syscallssys_exit_fremovexattr                     [Tracepoint event]
+
+  syscallssys_exit_fsconfig                         [Tracepoint event]
+
+  syscallssys_exit_fsetxattr                        [Tracepoint event]
+
+  syscallssys_exit_fsmount                          [Tracepoint event]
+
+  syscallssys_exit_fsopen                           [Tracepoint event]
+
+  syscallssys_exit_fspick                           [Tracepoint event]
+
+  syscallssys_exit_fstatfs                          [Tracepoint event]
+
+  syscallssys_exit_fsync                            [Tracepoint event]
+
+  syscallssys_exit_ftruncate                        [Tracepoint event]
+
+  syscallssys_exit_futex                            [Tracepoint event]
+
+  syscallssys_exit_futimesat                        [Tracepoint event]
+
+  syscallssys_exit_get_mempolicy                    [Tracepoint event]
+
+  syscallssys_exit_get_robust_list                  [Tracepoint event]
+
+  syscallssys_exit_getcpu                           [Tracepoint event]
+
+  syscallssys_exit_getcwd                           [Tracepoint event]
+
+  syscallssys_exit_getdents                         [Tracepoint event]
+
+  syscallssys_exit_getdents64                       [Tracepoint event]
+
+  syscallssys_exit_getegid                          [Tracepoint event]
+
+  syscallssys_exit_geteuid                          [Tracepoint event]
+
+  syscallssys_exit_getgid                           [Tracepoint event]
+
+  syscallssys_exit_getgroups                        [Tracepoint event]
+
+  syscallssys_exit_getitimer                        [Tracepoint event]
+
+  syscallssys_exit_getpeername                      [Tracepoint event]
+
+  syscallssys_exit_getpgid                          [Tracepoint event]
+
+  syscallssys_exit_getpgrp                          [Tracepoint event]
+
+  syscallssys_exit_getpid                           [Tracepoint event]
+
+  syscallssys_exit_getppid                          [Tracepoint event]
+
+  syscallssys_exit_getpriority                      [Tracepoint event]
+
+  syscallssys_exit_getrandom                        [Tracepoint event]
+
+  syscallssys_exit_getresgid                        [Tracepoint event]
+
+  syscallssys_exit_getresuid                        [Tracepoint event]
+
+  syscallssys_exit_getrlimit                        [Tracepoint event]
+
+  syscallssys_exit_getrusage                        [Tracepoint event]
+
+  syscallssys_exit_getsid                           [Tracepoint event]
+
+  syscallssys_exit_getsockname                      [Tracepoint event]
+
+  syscallssys_exit_getsockopt                       [Tracepoint event]
+
+  syscallssys_exit_gettid                           [Tracepoint event]
+
+  syscallssys_exit_gettimeofday                     [Tracepoint event]
+
+  syscallssys_exit_getuid                           [Tracepoint event]
+
+  syscallssys_exit_getxattr                         [Tracepoint event]
+
+  syscallssys_exit_init_module                      [Tracepoint event]
+
+  syscallssys_exit_inotify_add_watch                [Tracepoint event]
+
+  syscallssys_exit_inotify_init                     [Tracepoint event]
+
+  syscallssys_exit_inotify_init1                    [Tracepoint event]
+
+  syscallssys_exit_inotify_rm_watch                 [Tracepoint event]
+
+  syscallssys_exit_io_cancel                        [Tracepoint event]
+
+  syscallssys_exit_io_destroy                       [Tracepoint event]
+
+  syscallssys_exit_io_getevents                     [Tracepoint event]
+
+  syscallssys_exit_io_pgetevents                    [Tracepoint event]
+
+  syscallssys_exit_io_setup                         [Tracepoint event]
+
+  syscallssys_exit_io_submit                        [Tracepoint event]
+
+  syscallssys_exit_io_uring_enter                   [Tracepoint event]
+
+  syscallssys_exit_io_uring_register                [Tracepoint event]
+
+  syscallssys_exit_io_uring_setup                   [Tracepoint event]
+
+  syscallssys_exit_ioctl                            [Tracepoint event]
+
+  syscallssys_exit_ioperm                           [Tracepoint event]
+
+  syscallssys_exit_iopl                             [Tracepoint event]
+
+  syscallssys_exit_ioprio_get                       [Tracepoint event]
+
+  syscallssys_exit_ioprio_set                       [Tracepoint event]
+
+  syscallssys_exit_kcmp                             [Tracepoint event]
+
+  syscallssys_exit_kexec_file_load                  [Tracepoint event]
+
+  syscallssys_exit_kexec_load                       [Tracepoint event]
+
+  syscallssys_exit_keyctl                           [Tracepoint event]
+
+  syscallssys_exit_kill                             [Tracepoint event]
+
+  syscallssys_exit_landlock_add_rule                [Tracepoint event]
+
+  syscallssys_exit_landlock_create_ruleset          [Tracepoint event]
+
+  syscallssys_exit_landlock_restrict_self           [Tracepoint event]
+
+  syscallssys_exit_lchown                           [Tracepoint event]
+
+  syscallssys_exit_lgetxattr                        [Tracepoint event]
+
+  syscallssys_exit_link                             [Tracepoint event]
+
+  syscallssys_exit_linkat                           [Tracepoint event]
+
+  syscallssys_exit_listen                           [Tracepoint event]
+
+  syscallssys_exit_listxattr                        [Tracepoint event]
+
+  syscallssys_exit_llistxattr                       [Tracepoint event]
+
+  syscallssys_exit_lremovexattr                     [Tracepoint event]
+
+  syscallssys_exit_lseek                            [Tracepoint event]
+
+  syscallssys_exit_lsetxattr                        [Tracepoint event]
+
+  syscallssys_exit_madvise                          [Tracepoint event]
+
+  syscallssys_exit_mbind                            [Tracepoint event]
+
+  syscallssys_exit_membarrier                       [Tracepoint event]
+
+  syscallssys_exit_memfd_create                     [Tracepoint event]
+
+  syscallssys_exit_memfd_secret                     [Tracepoint event]
+
+  syscallssys_exit_migrate_pages                    [Tracepoint event]
+
+  syscallssys_exit_mincore                          [Tracepoint event]
+
+  syscallssys_exit_mkdir                            [Tracepoint event]
+
+  syscallssys_exit_mkdirat                          [Tracepoint event]
+
+  syscallssys_exit_mknod                            [Tracepoint event]
+
+  syscallssys_exit_mknodat                          [Tracepoint event]
+
+  syscallssys_exit_mlock                            [Tracepoint event]
+
+  syscallssys_exit_mlock2                           [Tracepoint event]
+
+  syscallssys_exit_mlockall                         [Tracepoint event]
+
+  syscallssys_exit_mmap                             [Tracepoint event]
+
+  syscallssys_exit_modify_ldt                       [Tracepoint event]
+
+  syscallssys_exit_mount                            [Tracepoint event]
+
+  syscallssys_exit_mount_setattr                    [Tracepoint event]
+
+  syscallssys_exit_move_mount                       [Tracepoint event]
+
+  syscallssys_exit_move_pages                       [Tracepoint event]
+
+  syscallssys_exit_mprotect                         [Tracepoint event]
+
+  syscallssys_exit_mq_getsetattr                    [Tracepoint event]
+
+  syscallssys_exit_mq_notify                        [Tracepoint event]
+
+  syscallssys_exit_mq_open                          [Tracepoint event]
+
+  syscallssys_exit_mq_timedreceive                  [Tracepoint event]
+
+  syscallssys_exit_mq_timedsend                     [Tracepoint event]
+
+  syscallssys_exit_mq_unlink                        [Tracepoint event]
+
+  syscallssys_exit_mremap                           [Tracepoint event]
+
+  syscallssys_exit_msgctl                           [Tracepoint event]
+
+  syscallssys_exit_msgget                           [Tracepoint event]
+
+  syscallssys_exit_msgrcv                           [Tracepoint event]
+
+  syscallssys_exit_msgsnd                           [Tracepoint event]
+
+  syscallssys_exit_msync                            [Tracepoint event]
+
+  syscallssys_exit_munlock                          [Tracepoint event]
+
+  syscallssys_exit_munlockall                       [Tracepoint event]
+
+  syscallssys_exit_munmap                           [Tracepoint event]
+
+  syscallssys_exit_name_to_handle_at                [Tracepoint event]
+
+  syscallssys_exit_nanosleep                        [Tracepoint event]
+
+  syscallssys_exit_newfstat                         [Tracepoint event]
+
+  syscallssys_exit_newfstatat                       [Tracepoint event]
+
+  syscallssys_exit_newlstat                         [Tracepoint event]
+
+  syscallssys_exit_newstat                          [Tracepoint event]
+
+  syscallssys_exit_newuname                         [Tracepoint event]
+
+  syscallssys_exit_open                             [Tracepoint event]
+
+  syscallssys_exit_open_by_handle_at                [Tracepoint event]
+
+  syscallssys_exit_open_tree                        [Tracepoint event]
+
+  syscallssys_exit_openat                           [Tracepoint event]
+
+  syscallssys_exit_openat2                          [Tracepoint event]
+
+  syscallssys_exit_pause                            [Tracepoint event]
+
+  syscallssys_exit_perf_event_open                  [Tracepoint event]
+
+  syscallssys_exit_personality                      [Tracepoint event]
+
+  syscallssys_exit_pidfd_getfd                      [Tracepoint event]
+
+  syscallssys_exit_pidfd_open                       [Tracepoint event]
+
+  syscallssys_exit_pidfd_send_signal                [Tracepoint event]
+
+  syscallssys_exit_pipe                             [Tracepoint event]
+
+  syscallssys_exit_pipe2                            [Tracepoint event]
+
+  syscallssys_exit_pivot_root                       [Tracepoint event]
+
+  syscallssys_exit_pkey_alloc                       [Tracepoint event]
+
+  syscallssys_exit_pkey_free                        [Tracepoint event]
+
+  syscallssys_exit_pkey_mprotect                    [Tracepoint event]
+
+  syscallssys_exit_poll                             [Tracepoint event]
+
+  syscallssys_exit_ppoll                            [Tracepoint event]
+
+  syscallssys_exit_prctl                            [Tracepoint event]
+
+  syscallssys_exit_pread64                          [Tracepoint event]
+
+  syscallssys_exit_preadv                           [Tracepoint event]
+
+  syscallssys_exit_preadv2                          [Tracepoint event]
+
+  syscallssys_exit_prlimit64                        [Tracepoint event]
+
+  syscallssys_exit_process_madvise                  [Tracepoint event]
+
+  syscallssys_exit_process_mrelease                 [Tracepoint event]
+
+  syscallssys_exit_process_vm_readv                 [Tracepoint event]
+
+  syscallssys_exit_process_vm_writev                [Tracepoint event]
+
+  syscallssys_exit_pselect6                         [Tracepoint event]
+
+  syscallssys_exit_ptrace                           [Tracepoint event]
+
+  syscallssys_exit_pwrite64                         [Tracepoint event]
+
+  syscallssys_exit_pwritev                          [Tracepoint event]
+
+  syscallssys_exit_pwritev2                         [Tracepoint event]
+
+  syscallssys_exit_quotactl                         [Tracepoint event]
+
+  syscallssys_exit_quotactl_fd                      [Tracepoint event]
+
+  syscallssys_exit_read                             [Tracepoint event]
+
+  syscallssys_exit_readahead                        [Tracepoint event]
+
+  syscallssys_exit_readlink                         [Tracepoint event]
+
+  syscallssys_exit_readlinkat                       [Tracepoint event]
+
+  syscallssys_exit_readv                            [Tracepoint event]
+
+  syscallssys_exit_reboot                           [Tracepoint event]
+
+  syscallssys_exit_recvfrom                         [Tracepoint event]
+
+  syscallssys_exit_recvmmsg                         [Tracepoint event]
+
+  syscallssys_exit_recvmsg                          [Tracepoint event]
+
+  syscallssys_exit_remap_file_pages                 [Tracepoint event]
+
+  syscallssys_exit_removexattr                      [Tracepoint event]
+
+  syscallssys_exit_rename                           [Tracepoint event]
+
+  syscallssys_exit_renameat                         [Tracepoint event]
+
+  syscallssys_exit_renameat2                        [Tracepoint event]
+
+  syscallssys_exit_request_key                      [Tracepoint event]
+
+  syscallssys_exit_restart_syscall                  [Tracepoint event]
+
+  syscallssys_exit_rmdir                            [Tracepoint event]
+
+  syscallssys_exit_rseq                             [Tracepoint event]
+
+  syscallssys_exit_rt_sigaction                     [Tracepoint event]
+
+  syscallssys_exit_rt_sigpending                    [Tracepoint event]
+
+  syscallssys_exit_rt_sigprocmask                   [Tracepoint event]
+
+  syscallssys_exit_rt_sigqueueinfo                  [Tracepoint event]
+
+  syscallssys_exit_rt_sigreturn                     [Tracepoint event]
+
+  syscallssys_exit_rt_sigsuspend                    [Tracepoint event]
+
+  syscallssys_exit_rt_sigtimedwait                  [Tracepoint event]
+
+  syscallssys_exit_rt_tgsigqueueinfo                [Tracepoint event]
+
+  syscallssys_exit_sched_get_priority_max           [Tracepoint event]
+
+  syscallssys_exit_sched_get_priority_min           [Tracepoint event]
+
+  syscallssys_exit_sched_getaffinity                [Tracepoint event]
+
+  syscallssys_exit_sched_getattr                    [Tracepoint event]
+
+  syscallssys_exit_sched_getparam                   [Tracepoint event]
+
+  syscallssys_exit_sched_getscheduler               [Tracepoint event]
+
+  syscallssys_exit_sched_rr_get_interval            [Tracepoint event]
+
+  syscallssys_exit_sched_setaffinity                [Tracepoint event]
+
+  syscallssys_exit_sched_setattr                    [Tracepoint event]
+
+  syscallssys_exit_sched_setparam                   [Tracepoint event]
+
+  syscallssys_exit_sched_setscheduler               [Tracepoint event]
+
+  syscallssys_exit_sched_yield                      [Tracepoint event]
+
+  syscallssys_exit_seccomp                          [Tracepoint event]
+
+  syscallssys_exit_select                           [Tracepoint event]
+
+  syscallssys_exit_semctl                           [Tracepoint event]
+
+  syscallssys_exit_semget                           [Tracepoint event]
+
+  syscallssys_exit_semop                            [Tracepoint event]
+
+  syscallssys_exit_semtimedop                       [Tracepoint event]
+
+  syscallssys_exit_sendfile64                       [Tracepoint event]
+
+  syscallssys_exit_sendmmsg                         [Tracepoint event]
+
+  syscallssys_exit_sendmsg                          [Tracepoint event]
+
+  syscallssys_exit_sendto                           [Tracepoint event]
+
+  syscallssys_exit_set_mempolicy                    [Tracepoint event]
+
+  syscallssys_exit_set_robust_list                  [Tracepoint event]
+
+  syscallssys_exit_set_tid_address                  [Tracepoint event]
+
+  syscallssys_exit_setdomainname                    [Tracepoint event]
+
+  syscallssys_exit_setfsgid                         [Tracepoint event]
+
+  syscallssys_exit_setfsuid                         [Tracepoint event]
+
+  syscallssys_exit_setgid                           [Tracepoint event]
+
+  syscallssys_exit_setgroups                        [Tracepoint event]
+
+  syscallssys_exit_sethostname                      [Tracepoint event]
+
+  syscallssys_exit_setitimer                        [Tracepoint event]
+
+  syscallssys_exit_setns                            [Tracepoint event]
+
+  syscallssys_exit_setpgid                          [Tracepoint event]
+
+  syscallssys_exit_setpriority                      [Tracepoint event]
+
+  syscallssys_exit_setregid                         [Tracepoint event]
+
+  syscallssys_exit_setresgid                        [Tracepoint event]
+
+  syscallssys_exit_setresuid                        [Tracepoint event]
+
+  syscallssys_exit_setreuid                         [Tracepoint event]
+
+  syscallssys_exit_setrlimit                        [Tracepoint event]
+
+  syscallssys_exit_setsid                           [Tracepoint event]
+
+  syscallssys_exit_setsockopt                       [Tracepoint event]
+
+  syscallssys_exit_settimeofday                     [Tracepoint event]
+
+  syscallssys_exit_setuid                           [Tracepoint event]
+
+  syscallssys_exit_setxattr                         [Tracepoint event]
+
+  syscallssys_exit_shmat                            [Tracepoint event]
+
+  syscallssys_exit_shmctl                           [Tracepoint event]
+
+  syscallssys_exit_shmdt                            [Tracepoint event]
+
+  syscallssys_exit_shmget                           [Tracepoint event]
+
+  syscallssys_exit_shutdown                         [Tracepoint event]
+
+  syscallssys_exit_sigaltstack                      [Tracepoint event]
+
+  syscallssys_exit_signalfd                         [Tracepoint event]
+
+  syscallssys_exit_signalfd4                        [Tracepoint event]
+
+  syscallssys_exit_socket                           [Tracepoint event]
+
+  syscallssys_exit_socketpair                       [Tracepoint event]
+
+  syscallssys_exit_splice                           [Tracepoint event]
+
+  syscallssys_exit_statfs                           [Tracepoint event]
+
+  syscallssys_exit_statx                            [Tracepoint event]
+
+  syscallssys_exit_swapoff                          [Tracepoint event]
+
+  syscallssys_exit_swapon                           [Tracepoint event]
+
+  syscallssys_exit_symlink                          [Tracepoint event]
+
+  syscallssys_exit_symlinkat                        [Tracepoint event]
+
+  syscallssys_exit_sync                             [Tracepoint event]
+
+  syscallssys_exit_sync_file_range                  [Tracepoint event]
+
+  syscallssys_exit_syncfs                           [Tracepoint event]
+
+  syscallssys_exit_sysfs                            [Tracepoint event]
+
+  syscallssys_exit_sysinfo                          [Tracepoint event]
+
+  syscallssys_exit_syslog                           [Tracepoint event]
+
+  syscallssys_exit_tee                              [Tracepoint event]
+
+  syscallssys_exit_tgkill                           [Tracepoint event]
+
+  syscallssys_exit_time                             [Tracepoint event]
+
+  syscallssys_exit_timer_create                     [Tracepoint event]
+
+  syscallssys_exit_timer_delete                     [Tracepoint event]
+
+  syscallssys_exit_timer_getoverrun                 [Tracepoint event]
+
+  syscallssys_exit_timer_gettime                    [Tracepoint event]
+
+  syscallssys_exit_timer_settime                    [Tracepoint event]
+
+  syscallssys_exit_timerfd_create                   [Tracepoint event]
+
+  syscallssys_exit_timerfd_gettime                  [Tracepoint event]
+
+  syscallssys_exit_timerfd_settime                  [Tracepoint event]
+
+  syscallssys_exit_times                            [Tracepoint event]
+
+  syscallssys_exit_tkill                            [Tracepoint event]
+
+  syscallssys_exit_truncate                         [Tracepoint event]
+
+  syscallssys_exit_umask                            [Tracepoint event]
+
+  syscallssys_exit_umount                           [Tracepoint event]
+
+  syscallssys_exit_unlink                           [Tracepoint event]
+
+  syscallssys_exit_unlinkat                         [Tracepoint event]
+
+  syscallssys_exit_unshare                          [Tracepoint event]
+
+  syscallssys_exit_userfaultfd                      [Tracepoint event]
+
+  syscallssys_exit_ustat                            [Tracepoint event]
+
+  syscallssys_exit_utime                            [Tracepoint event]
+
+  syscallssys_exit_utimensat                        [Tracepoint event]
+
+  syscallssys_exit_utimes                           [Tracepoint event]
+
+  syscallssys_exit_vfork                            [Tracepoint event]
+
+  syscallssys_exit_vhangup                          [Tracepoint event]
+
+  syscallssys_exit_vmsplice                         [Tracepoint event]
+
+  syscallssys_exit_wait4                            [Tracepoint event]
+
+  syscallssys_exit_waitid                           [Tracepoint event]
+
+  syscallssys_exit_write                            [Tracepoint event]
+
+  syscallssys_exit_writev                           [Tracepoint event]
+
+  tasktask_newtask                                  [Tracepoint event]
+
+  tasktask_rename                                   [Tracepoint event]
+
+  tcptcp_bad_csum                                   [Tracepoint event]
+
+  tcptcp_destroy_sock                               [Tracepoint event]
+
+  tcptcp_probe                                      [Tracepoint event]
+
+  tcptcp_rcv_space_adjust                           [Tracepoint event]
+
+  tcptcp_receive_reset                              [Tracepoint event]
+
+  tcptcp_retransmit_skb                             [Tracepoint event]
+
+  tcptcp_retransmit_synack                          [Tracepoint event]
+
+  tcptcp_send_reset                                 [Tracepoint event]
+
+  thermalcdev_update                                [Tracepoint event]
+
+  thermalthermal_power_devfreq_get_power            [Tracepoint event]
+
+  thermalthermal_power_devfreq_limit                [Tracepoint event]
+
+  thermalthermal_temperature                        [Tracepoint event]
+
+  thermalthermal_zone_trip                          [Tracepoint event]
+
+  thermal_power_allocatorthermal_power_allocator    [Tracepoint event]
+
+  thermal_power_allocatorthermal_power_allocator_pid [Tracepoint event]
+
+  timerhrtimer_cancel                               [Tracepoint event]
+
+  timerhrtimer_expire_entry                         [Tracepoint event]
+
+  timerhrtimer_expire_exit                          [Tracepoint event]
+
+  timerhrtimer_init                                 [Tracepoint event]
+
+  timerhrtimer_start                                [Tracepoint event]
+
+  timeritimer_expire                                [Tracepoint event]
+
+  timeritimer_state                                 [Tracepoint event]
+
+  timertick_stop                                    [Tracepoint event]
+
+  timertimer_cancel                                 [Tracepoint event]
+
+  timertimer_expire_entry                           [Tracepoint event]
+
+  timertimer_expire_exit                            [Tracepoint event]
+
+  timertimer_init                                   [Tracepoint event]
+
+  timertimer_start                                  [Tracepoint event]
+
+  tlbtlb_flush                                      [Tracepoint event]
+
+  tlstls_device_decrypted                           [Tracepoint event]
+
+  tlstls_device_offload_set                         [Tracepoint event]
+
+  tlstls_device_rx_resync_nh_delay                  [Tracepoint event]
+
+  tlstls_device_rx_resync_nh_schedule               [Tracepoint event]
+
+  tlstls_device_rx_resync_send                      [Tracepoint event]
+
+  tlstls_device_tx_resync_req                       [Tracepoint event]
+
+  tlstls_device_tx_resync_send                      [Tracepoint event]
+
+  udpudp_fail_queue_rcv_skb                         [Tracepoint event]
+
+  vmscanmm_shrink_slab_end                          [Tracepoint event]
+
+  vmscanmm_shrink_slab_start                        [Tracepoint event]
+
+  vmscanmm_vmscan_direct_reclaim_begin              [Tracepoint event]
+
+  vmscanmm_vmscan_direct_reclaim_end                [Tracepoint event]
+
+  vmscanmm_vmscan_kswapd_sleep                      [Tracepoint event]
+
+  vmscanmm_vmscan_kswapd_wake                       [Tracepoint event]
+
+  vmscanmm_vmscan_lru_isolate                       [Tracepoint event]
+
+  vmscanmm_vmscan_lru_shrink_active                 [Tracepoint event]
+
+  vmscanmm_vmscan_lru_shrink_inactive               [Tracepoint event]
+
+  vmscanmm_vmscan_memcg_reclaim_begin               [Tracepoint event]
+
+  vmscanmm_vmscan_memcg_reclaim_end                 [Tracepoint event]
+
+  vmscanmm_vmscan_memcg_softlimit_reclaim_begin     [Tracepoint event]
+
+  vmscanmm_vmscan_memcg_softlimit_reclaim_end       [Tracepoint event]
+
+  vmscanmm_vmscan_node_reclaim_begin                [Tracepoint event]
+
+  vmscanmm_vmscan_node_reclaim_end                  [Tracepoint event]
+
+  vmscanmm_vmscan_wakeup_kswapd                     [Tracepoint event]
+
+  vmscanmm_vmscan_writepage                         [Tracepoint event]
+
+  vsyscallemulate_vsyscall                          [Tracepoint event]
+
+  wbtwbt_lat                                        [Tracepoint event]
+
+  wbtwbt_stat                                       [Tracepoint event]
+
+  wbtwbt_step                                       [Tracepoint event]
+
+  wbtwbt_timer                                      [Tracepoint event]
+
+  workqueueworkqueue_activate_work                  [Tracepoint event]
+
+  workqueueworkqueue_execute_end                    [Tracepoint event]
+
+  workqueueworkqueue_execute_start                  [Tracepoint event]
+
+  workqueueworkqueue_queue_work                     [Tracepoint event]
+
+  writebackbalance_dirty_pages                      [Tracepoint event]
+
+  writebackbdi_dirty_ratelimit                      [Tracepoint event]
+
+  writebackflush_foreign                            [Tracepoint event]
+
+  writebackglobal_dirty_state                       [Tracepoint event]
+
+  writebackinode_foreign_history                    [Tracepoint event]
+
+  writebackinode_switch_wbs                         [Tracepoint event]
+
+  writebacksb_clear_inode_writeback                 [Tracepoint event]
+
+  writebacksb_mark_inode_writeback                  [Tracepoint event]
+
+  writebacktrack_foreign_dirty                      [Tracepoint event]
+
+  writebackwait_on_page_writeback                   [Tracepoint event]
+
+  writebackwbc_writepage                            [Tracepoint event]
+
+  writebackwriteback_bdi_register                   [Tracepoint event]
+
+  writebackwriteback_congestion_wait                [Tracepoint event]
+
+  writebackwriteback_dirty_inode                    [Tracepoint event]
+
+  writebackwriteback_dirty_inode_enqueue            [Tracepoint event]
+
+  writebackwriteback_dirty_inode_start              [Tracepoint event]
+
+  writebackwriteback_dirty_page                     [Tracepoint event]
+
+  writebackwriteback_exec                           [Tracepoint event]
+
+  writebackwriteback_lazytime                       [Tracepoint event]
+
+  writebackwriteback_lazytime_iput                  [Tracepoint event]
+
+  writebackwriteback_mark_inode_dirty               [Tracepoint event]
+
+  writebackwriteback_pages_written                  [Tracepoint event]
+
+  writebackwriteback_queue                          [Tracepoint event]
+
+  writebackwriteback_queue_io                       [Tracepoint event]
+
+  writebackwriteback_sb_inodes_requeue              [Tracepoint event]
+
+  writebackwriteback_single_inode                   [Tracepoint event]
+
+  writebackwriteback_single_inode_start             [Tracepoint event]
+
+  writebackwriteback_start                          [Tracepoint event]
+
+  writebackwriteback_wait                           [Tracepoint event]
+
+  writebackwriteback_wait_iff_congested             [Tracepoint event]
+
+  writebackwriteback_wake_background                [Tracepoint event]
+
+  writebackwriteback_write_inode                    [Tracepoint event]
+
+  writebackwriteback_write_inode_start              [Tracepoint event]
+
+  writebackwriteback_written                        [Tracepoint event]
+
+  x86_fpux86_fpu_after_restore                      [Tracepoint event]
+
+  x86_fpux86_fpu_after_save                         [Tracepoint event]
+
+  x86_fpux86_fpu_before_restore                     [Tracepoint event]
+
+  x86_fpux86_fpu_before_save                        [Tracepoint event]
+
+  x86_fpux86_fpu_copy_dst                           [Tracepoint event]
+
+  x86_fpux86_fpu_copy_src                           [Tracepoint event]
+
+  x86_fpux86_fpu_dropped                            [Tracepoint event]
+
+  x86_fpux86_fpu_init_state                         [Tracepoint event]
+
+  x86_fpux86_fpu_regs_activated                     [Tracepoint event]
+
+  x86_fpux86_fpu_regs_deactivated                   [Tracepoint event]
+
+  x86_fpux86_fpu_xstate_check_failed                [Tracepoint event]
+
+  xdpmem_connect                                    [Tracepoint event]
+
+  xdpmem_disconnect                                 [Tracepoint event]
+
+  xdpmem_return_failed                              [Tracepoint event]
+
+  xdpxdp_bulk_tx                                    [Tracepoint event]
+
+  xdpxdp_cpumap_enqueue                             [Tracepoint event]
+
+  xdpxdp_cpumap_kthread                             [Tracepoint event]
+
+  xdpxdp_devmap_xmit                                [Tracepoint event]
+
+  xdpxdp_exception                                  [Tracepoint event]
+
+  xdpxdp_redirect                                   [Tracepoint event]
+
+  xdpxdp_redirect_err                               [Tracepoint event]
+
+  xdpxdp_redirect_map                               [Tracepoint event]
+
+  xdpxdp_redirect_map_err                           [Tracepoint event]
+
+  xenxen_cpu_load_idt                               [Tracepoint event]
+
+  xenxen_cpu_set_ldt                                [Tracepoint event]
+
+  xenxen_cpu_write_gdt_entry                        [Tracepoint event]
+
+  xenxen_cpu_write_idt_entry                        [Tracepoint event]
+
+  xenxen_cpu_write_ldt_entry                        [Tracepoint event]
+
+  xenxen_mc_batch                                   [Tracepoint event]
+
+  xenxen_mc_callback                                [Tracepoint event]
+
+  xenxen_mc_entry                                   [Tracepoint event]
+
+  xenxen_mc_entry_alloc                             [Tracepoint event]
+
+  xenxen_mc_extend_args                             [Tracepoint event]
+
+  xenxen_mc_flush                                   [Tracepoint event]
+
+  xenxen_mc_flush_reason                            [Tracepoint event]
+
+  xenxen_mc_issue                                   [Tracepoint event]
+
+  xenxen_mmu_alloc_ptpage                           [Tracepoint event]
+
+  xenxen_mmu_flush_tlb_multi                        [Tracepoint event]
+
+  xenxen_mmu_flush_tlb_one_user                     [Tracepoint event]
+
+  xenxen_mmu_pgd_pin                                [Tracepoint event]
+
+  xenxen_mmu_pgd_unpin                              [Tracepoint event]
+
+  xenxen_mmu_ptep_modify_prot_commit                [Tracepoint event]
+
+  xenxen_mmu_ptep_modify_prot_start                 [Tracepoint event]
+
+  xenxen_mmu_release_ptpage                         [Tracepoint event]
+
+  xenxen_mmu_set_p4d                                [Tracepoint event]
+
+  xenxen_mmu_set_pmd                                [Tracepoint event]
+
+  xenxen_mmu_set_pte                                [Tracepoint event]
+
+  xenxen_mmu_set_pud                                [Tracepoint event]
+
+  xenxen_mmu_write_cr3                              [Tracepoint event]
+
+  xhci-hcdxhci_add_endpoint                         [Tracepoint event]
+
+  xhci-hcdxhci_address_ctrl_ctx                     [Tracepoint event]
+
+  xhci-hcdxhci_address_ctx                          [Tracepoint event]
+
+  xhci-hcdxhci_alloc_dev                            [Tracepoint event]
+
+  xhci-hcdxhci_alloc_virt_device                    [Tracepoint event]
+
+  xhci-hcdxhci_configure_endpoint                   [Tracepoint event]
+
+  xhci-hcdxhci_configure_endpoint_ctrl_ctx          [Tracepoint event]
+
+  xhci-hcdxhci_dbc_alloc_request                    [Tracepoint event]
+
+  xhci-hcdxhci_dbc_free_request                     [Tracepoint event]
+
+  xhci-hcdxhci_dbc_gadget_ep_queue                  [Tracepoint event]
+
+  xhci-hcdxhci_dbc_giveback_request                 [Tracepoint event]
+
+  xhci-hcdxhci_dbc_handle_event                     [Tracepoint event]
+
+  xhci-hcdxhci_dbc_handle_transfer                  [Tracepoint event]
+
+  xhci-hcdxhci_dbc_queue_request                    [Tracepoint event]
+
+  xhci-hcdxhci_dbg_address                          [Tracepoint event]
+
+  xhci-hcdxhci_dbg_cancel_urb                       [Tracepoint event]
+
+  xhci-hcdxhci_dbg_context_change                   [Tracepoint event]
+
+  xhci-hcdxhci_dbg_init                             [Tracepoint event]
+
+  xhci-hcdxhci_dbg_quirks                           [Tracepoint event]
+
+  xhci-hcdxhci_dbg_reset_ep                         [Tracepoint event]
+
+  xhci-hcdxhci_dbg_ring_expansion                   [Tracepoint event]
+
+  xhci-hcdxhci_discover_or_reset_device             [Tracepoint event]
+
+  xhci-hcdxhci_free_dev                             [Tracepoint event]
+
+  xhci-hcdxhci_free_virt_device                     [Tracepoint event]
+
+  xhci-hcdxhci_get_port_status                      [Tracepoint event]
+
+  xhci-hcdxhci_handle_cmd_addr_dev                  [Tracepoint event]
+
+  xhci-hcdxhci_handle_cmd_config_ep                 [Tracepoint event]
+
+  xhci-hcdxhci_handle_cmd_disable_slot              [Tracepoint event]
+
+  xhci-hcdxhci_handle_cmd_reset_dev                 [Tracepoint event]
+
+  xhci-hcdxhci_handle_cmd_reset_ep                  [Tracepoint event]
+
+  xhci-hcdxhci_handle_cmd_set_deq                   [Tracepoint event]
+
+  xhci-hcdxhci_handle_cmd_set_deq_ep                [Tracepoint event]
+
+  xhci-hcdxhci_handle_cmd_stop_ep                   [Tracepoint event]
+
+  xhci-hcdxhci_handle_command                       [Tracepoint event]
+
+  xhci-hcdxhci_handle_event                         [Tracepoint event]
+
+  xhci-hcdxhci_handle_port_status                   [Tracepoint event]
+
+  xhci-hcdxhci_handle_transfer                      [Tracepoint event]
+
+  xhci-hcdxhci_hub_status_data                      [Tracepoint event]
+
+  xhci-hcdxhci_inc_deq                              [Tracepoint event]
+
+  xhci-hcdxhci_inc_enq                              [Tracepoint event]
+
+  xhci-hcdxhci_queue_trb                            [Tracepoint event]
+
+  xhci-hcdxhci_ring_alloc                           [Tracepoint event]
+
+  xhci-hcdxhci_ring_ep_doorbell                     [Tracepoint event]
+
+  xhci-hcdxhci_ring_expansion                       [Tracepoint event]
+
+  xhci-hcdxhci_ring_free                            [Tracepoint event]
+
+  xhci-hcdxhci_ring_host_doorbell                   [Tracepoint event]
+
+  xhci-hcdxhci_setup_addressable_virt_device        [Tracepoint event]
+
+  xhci-hcdxhci_setup_device                         [Tracepoint event]
+
+  xhci-hcdxhci_setup_device_slot                    [Tracepoint event]
+
+  xhci-hcdxhci_stop_device                          [Tracepoint event]
+
+  xhci-hcdxhci_urb_dequeue                          [Tracepoint event]
+
+  xhci-hcdxhci_urb_enqueue                          [Tracepoint event]
+
+  xhci-hcdxhci_urb_giveback                         [Tracepoint event]
