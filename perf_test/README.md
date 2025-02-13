@@ -1,7 +1,7 @@
 # Performance Event Profiler (`perf_test`)
 
 ##  Overview
-`perf_test` is a **Linux performance profiling tool** that uses `perf_event_open` to measure hardware performance counters while executing memory-intensive workloads using `stress-ng`.
+`perf_test` is a **Linux performance profiling tool** that uses `perf_event_open` to measure hardware performance counters while executing memory-intensive workloads using `stress-ng`. This has been tested on a Linux machine running Intel's Cascade Lake processor.
 
 ###  Features:
 - **Collects performance events (e.g., cycles, instructions, custom raw events)**
