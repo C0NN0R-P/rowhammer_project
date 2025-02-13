@@ -1,9 +1,9 @@
 # Performance Event Profiler (`perf_test`)
 
-## 📖 Overview
+##  Overview
 `perf_test` is a **Linux performance profiling tool** that uses `perf_event_open` to measure hardware performance counters while executing memory-intensive workloads using `stress-ng`.
 
-### 🔹 Features:
+###  Features:
 - **Collects performance events (e.g., cycles, instructions, custom raw events)**
 - **Supports multiple memory access patterns (`read64`, `write64`, etc.)**
 - **Runs different stress-test methods sequentially**
@@ -12,26 +12,26 @@
 
 ---
 
-## 🚀 **Installation & Compilation**
-### **1️⃣ Clone & Enter the Directory**
+## **Installation & Compilation**
+### **1. Clone & Enter the Directory**
 ```sh
 git clone https://github.com/C0NN0R-P/rowhammer-project.git
 cd rowhammer_project
 cd perf_test
 ```
-### **2️⃣ Compile with `make`**
+### **2. Compile with `make`**
 ```sh
 make
 ```
-🔹 **What this does:**
+ **What this does:**
 - **Compiles `perf_test.c`** into an executable (`perf_test`).
 - **Checks if `stress-ng` is installed** and installs it if missing.
 
-### **3️⃣ Run the Program**
+### **3. Run the Program**
 ```sh
 sudo ./perf_test -e r10b0 -e cycles -e instructions -w read64 -w write64
 ```
-🔹 **Explanation:**
+ **Explanation:**
 - `-e r10b0` → Collect raw event `r10b0`
 - `-e cycles` → Collect CPU cycle counts
 - `-e instructions` → Collect executed instructions
@@ -40,7 +40,7 @@ sudo ./perf_test -e r10b0 -e cycles -e instructions -w read64 -w write64
 
 ---
 
-## 🎯 **Flags & Definitions**
+## **Flags & Definitions**
 This program supports several flags that allow customization of profiling settings.
 
 | Flag | Description | Default | Example Usage |
@@ -53,7 +53,7 @@ This program supports several flags that allow customization of profiling settin
 
 ---
 
-## 📊 **Interpreting the Results**
+## **Interpreting the Results**
 After execution, results will be stored in `perf_results.csv` and displayed on the screen.
 
 ### **Example CSV Output (`perf_results.csv`)**
@@ -82,8 +82,8 @@ Event Counts:
 
 ---
 
-## 🛠 **Additional Commands**
-### **📌 Get Available `stress-ng` Memory Methods**
+## **Additional Commands**
+### ** Get Available `stress-ng` Memory Methods**
 ```sh
 stress-ng --vm-method help
 ```
