@@ -1,4 +1,4 @@
-# Performance Event Profiler (`perf_test2`)
+# Performance Event Profiler (`perf_test`)
 
 ## 📖 Overview
 `perf_test` is a **Linux performance profiling tool** that uses `perf_event_open` to measure hardware performance counters while executing memory-intensive workloads using `stress-ng`.
@@ -15,7 +15,8 @@
 ## 🚀 **Installation & Compilation**
 ### **1️⃣ Clone & Enter the Directory**
 ```sh
-git clone https://github.com/yourrepo/perf_test.git
+git clone https://github.com/C0NN0R-P/rowhammer-project.git
+cd rowhammer_project
 cd perf_test
 ```
 ### **2️⃣ Compile with `make`**
@@ -28,7 +29,7 @@ make
 
 ### **3️⃣ Run the Program**
 ```sh
-sudo ./perf_test2 -e r10b0 -e cycles -e instructions -w read64 -w write64
+sudo ./perf_test -e r10b0 -e cycles -e instructions -w read64 -w write64
 ```
 🔹 **Explanation:**
 - `-e r10b0` → Collect raw event `r10b0`
@@ -87,10 +88,3 @@ Event Counts:
 stress-ng --vm-method help
 ```
 Lists all available **memory access patterns**.
-
----
-
-## 📜 **License**
-This project is licensed under the MIT License.
-
-🚀 **Now you're all set to start profiling!** 🎉
