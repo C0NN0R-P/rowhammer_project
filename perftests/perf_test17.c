@@ -52,7 +52,7 @@ int main() {
   for (int i = 0; i < NUM_UMASKS; i++) {
     uint64_t config = (umasks[i] << 8) | EVENT_CODE;
 
-    fds[i] - open_perf_event(config, CPU_TO_MEASURE);
+    fds[i] = open_perf_event(config, CPU_TO_MEASURE);
     if (fds[i] == -1) {
       fprintf(stderr, "Failed to open perf event for umask 0x%llx\n", (long long)umasks[i]);
       return EXIT_FAILURE;
