@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Ratio sweep + tREFI — 2026-11-19 01:32</title>
+<script src="https://cdn.plot.ly/plotly-2.27.0.min.js"></script>
+<style>
+  body { font-family: system-ui, sans-serif; margin: 16px; background: #fafafa; color: #222; }
+  h1 { font-size: 1.35rem; margin-bottom: 4px; }
+  h2.sec { font-size: 1.1rem; margin: 22px 0 8px; border-bottom: 1px solid #ddd; padding-bottom: 4px; }
+  .sub { color: #555; font-size: 0.9rem; margin-bottom: 12px; }
+  .row { display: flex; flex-wrap: wrap; gap: 16px; }
+  .panel { background: white; border: 1px solid #ddd; border-radius: 6px; padding: 8px; flex: 1 1 480px; }
+  .panel.wide { flex: 1 1 100%; }
+  .panel h2 { font-size: 1rem; margin: 4px 0 8px; }
+  .note { font-size: 0.85rem; color: #555; margin: 8px 0 16px; max-width: 960px; }
+  table { border-collapse: collapse; font-size: 0.85rem; }
+  th, td { border: 1px solid #ddd; padding: 4px 8px; text-align: right; }
+  th { background: #f3f3f3; }
+</style>
+</head>
+<body>
+<h1>Ratio sweep and tREFI measurement — 2026-11-19 01:32</h1>
+<div class="sub">Row 100 · banks 0 and 1 · measured tREFI ≈ 38 · 180 s per split · even real counts only · no bit flips</div>
+
+<h2 class="sec">Hammer sweep</h2>
+<div class="note">Rounds stay in a narrow band across every real:dummy split. Bank 1 is ~5% slower than bank 0. The zigzag is the even clamp (<code>real_acts &= ~1</code>), not a real effect.</div>
+<div class="row">
+  <div class="panel"><h2>Rounds vs real accesses</h2><div id="rounds"></div></div>
+  <div class="panel"><h2>Rounds vs dummy accesses</h2><div id="dummy"></div></div>
+</div>
+<div class="row" style="margin-top:16px">
+  <div class="panel"><h2>Bank 0 vs bank 1</h2><div id="compare"></div></div>
+  <div class="panel"><h2>Splits</h2><div id="table"></div></div>
+</div>
+
+<h2 class="sec">tREFI measurement</h2>
+<div class="note">Accesses between refresh outliers during the measurement only. Almost all intervals are 19 or 20; <code>* 2</code> is why the sweep used 38. The hammer runs did not log per-interval counts.</div>
+<div class="panel wide"><h2>Accesses between refreshes (2462 intervals)</h2><div id="series"></div></div>
+<div class="panel" style="margin-top:16px; max-width:520px"><h2>Distribution</h2><div id="hist"></div></div>
+
+<script>
+const DATA = [{"row": 100, "bank": 0, "real": 38, "dummy": 0, "total": 38, "elapsed_ms": 180000, "rounds": 21978706}, {"row": 100, "bank": 0, "real": 36, "dummy": 1, "total": 37, "elapsed_ms": 180000, "rounds": 22488878}, {"row": 100, "bank": 0, "real": 36, "dummy": 2, "total": 38, "elapsed_ms": 180000, "rounds": 21954702}, {"row": 100, "bank": 0, "real": 34, "dummy": 3, "total": 37, "elapsed_ms": 180000, "rounds": 22503732}, {"row": 100, "bank": 0, "real": 34, "dummy": 4, "total": 38, "elapsed_ms": 180000, "rounds": 21935662}, {"row": 100, "bank": 0, "real": 32, "dummy": 5, "total": 37, "elapsed_ms": 180000, "rounds": 22503498}, {"row": 100, "bank": 0, "real": 32, "dummy": 6, "total": 38, "elapsed_ms": 180000, "rounds": 21861301}, {"row": 100, "bank": 0, "real": 30, "dummy": 7, "total": 37, "elapsed_ms": 180000, "rounds": 23197938}, {"row": 100, "bank": 0, "real": 30, "dummy": 8, "total": 38, "elapsed_ms": 180000, "rounds": 22650070}, {"row": 100, "bank": 0, "real": 28, "dummy": 9, "total": 37, "elapsed_ms": 180000, "rounds": 22846983}, {"row": 100, "bank": 0, "real": 28, "dummy": 10, "total": 38, "elapsed_ms": 180000, "rounds": 22547559}, {"row": 100, "bank": 0, "real": 26, "dummy": 11, "total": 37, "elapsed_ms": 180000, "rounds": 23188801}, {"row": 100, "bank": 0, "real": 26, "dummy": 12, "total": 38, "elapsed_ms": 180000, "rounds": 22548945}, {"row": 100, "bank": 0, "real": 24, "dummy": 13, "total": 37, "elapsed_ms": 180000, "rounds": 23173413}, {"row": 100, "bank": 0, "real": 24, "dummy": 14, "total": 38, "elapsed_ms": 180000, "rounds": 22557907}, {"row": 100, "bank": 0, "real": 22, "dummy": 15, "total": 37, "elapsed_ms": 180000, "rounds": 23171086}, {"row": 100, "bank": 0, "real": 22, "dummy": 16, "total": 38, "elapsed_ms": 180000, "rounds": 22280895}, {"row": 100, "bank": 0, "real": 20, "dummy": 17, "total": 37, "elapsed_ms": 180000, "rounds": 23204752}, {"row": 100, "bank": 0, "real": 20, "dummy": 18, "total": 38, "elapsed_ms": 180000, "rounds": 22656553}, {"row": 100, "bank": 0, "real": 18, "dummy": 19, "total": 37, "elapsed_ms": 180000, "rounds": 23207883}, {"row": 100, "bank": 0, "real": 18, "dummy": 20, "total": 38, "elapsed_ms": 180000, "rounds": 22657211}, {"row": 100, "bank": 0, "real": 16, "dummy": 21, "total": 37, "elapsed_ms": 180000, "rounds": 23205219}, {"row": 100, "bank": 0, "real": 16, "dummy": 22, "total": 38, "elapsed_ms": 180000, "rounds": 22657089}, {"row": 100, "bank": 0, "real": 14, "dummy": 23, "total": 37, "elapsed_ms": 180000, "rounds": 23199088}, {"row": 100, "bank": 0, "real": 14, "dummy": 24, "total": 38, "elapsed_ms": 180000, "rounds": 22644838}, {"row": 100, "bank": 0, "real": 12, "dummy": 25, "total": 37, "elapsed_ms": 180000, "rounds": 23198936}, {"row": 100, "bank": 0, "real": 12, "dummy": 26, "total": 38, "elapsed_ms": 180000, "rounds": 22502489}, {"row": 100, "bank": 0, "real": 10, "dummy": 27, "total": 37, "elapsed_ms": 180000, "rounds": 23198929}, {"row": 100, "bank": 0, "real": 10, "dummy": 28, "total": 38, "elapsed_ms": 180000, "rounds": 22645754}, {"row": 100, "bank": 0, "real": 8, "dummy": 29, "total": 37, "elapsed_ms": 180000, "rounds": 23198182}, {"row": 100, "bank": 0, "real": 8, "dummy": 30, "total": 38, "elapsed_ms": 180000, "rounds": 22643608}, {"row": 100, "bank": 0, "real": 6, "dummy": 31, "total": 37, "elapsed_ms": 180000, "rounds": 23198963}, {"row": 100, "bank": 0, "real": 6, "dummy": 32, "total": 38, "elapsed_ms": 180000, "rounds": 22651727}, {"row": 100, "bank": 0, "real": 4, "dummy": 33, "total": 37, "elapsed_ms": 180000, "rounds": 23207816}, {"row": 100, "bank": 0, "real": 4, "dummy": 34, "total": 38, "elapsed_ms": 180000, "rounds": 22657891}, {"row": 100, "bank": 0, "real": 2, "dummy": 35, "total": 37, "elapsed_ms": 180000, "rounds": 23211836}, {"row": 100, "bank": 0, "real": 2, "dummy": 36, "total": 38, "elapsed_ms": 180000, "rounds": 22244554}, {"row": 100, "bank": 0, "real": 0, "dummy": 37, "total": 37, "elapsed_ms": 180000, "rounds": 23202276}, {"row": 100, "bank": 0, "real": 0, "dummy": 38, "total": 38, "elapsed_ms": 180000, "rounds": 22654720}, {"row": 100, "bank": 1, "real": 38, "dummy": 0, "total": 38, "elapsed_ms": 180000, "rounds": 21396076}, {"row": 100, "bank": 1, "real": 36, "dummy": 1, "total": 37, "elapsed_ms": 180000, "rounds": 21830048}, {"row": 100, "bank": 1, "real": 36, "dummy": 2, "total": 38, "elapsed_ms": 180000, "rounds": 21363271}, {"row": 100, "bank": 1, "real": 34, "dummy": 3, "total": 37, "elapsed_ms": 180000, "rounds": 21870687}, {"row": 100, "bank": 1, "real": 34, "dummy": 4, "total": 38, "elapsed_ms": 180000, "rounds": 21310104}, {"row": 100, "bank": 1, "real": 32, "dummy": 5, "total": 37, "elapsed_ms": 180000, "rounds": 21897059}, {"row": 100, "bank": 1, "real": 32, "dummy": 6, "total": 38, "elapsed_ms": 180000, "rounds": 21332979}, {"row": 100, "bank": 1, "real": 30, "dummy": 7, "total": 37, "elapsed_ms": 180000, "rounds": 21512504}, {"row": 100, "bank": 1, "real": 30, "dummy": 8, "total": 38, "elapsed_ms": 180000, "rounds": 21320383}, {"row": 100, "bank": 1, "real": 28, "dummy": 9, "total": 37, "elapsed_ms": 180000, "rounds": 21398364}, {"row": 100, "bank": 1, "real": 28, "dummy": 10, "total": 38, "elapsed_ms": 180000, "rounds": 21259959}, {"row": 100, "bank": 1, "real": 26, "dummy": 11, "total": 37, "elapsed_ms": 180000, "rounds": 21837861}, {"row": 100, "bank": 1, "real": 26, "dummy": 12, "total": 38, "elapsed_ms": 180000, "rounds": 21284904}, {"row": 100, "bank": 1, "real": 24, "dummy": 13, "total": 37, "elapsed_ms": 180000, "rounds": 21823888}, {"row": 100, "bank": 1, "real": 24, "dummy": 14, "total": 38, "elapsed_ms": 180000, "rounds": 21297521}, {"row": 100, "bank": 1, "real": 22, "dummy": 15, "total": 37, "elapsed_ms": 180000, "rounds": 21799850}, {"row": 100, "bank": 1, "real": 22, "dummy": 16, "total": 38, "elapsed_ms": 180000, "rounds": 21313005}, {"row": 100, "bank": 1, "real": 20, "dummy": 17, "total": 37, "elapsed_ms": 180000, "rounds": 21518367}, {"row": 100, "bank": 1, "real": 20, "dummy": 18, "total": 38, "elapsed_ms": 180000, "rounds": 21321750}, {"row": 100, "bank": 1, "real": 18, "dummy": 19, "total": 37, "elapsed_ms": 180000, "rounds": 21910677}, {"row": 100, "bank": 1, "real": 18, "dummy": 20, "total": 38, "elapsed_ms": 180000, "rounds": 21349969}, {"row": 100, "bank": 1, "real": 16, "dummy": 21, "total": 37, "elapsed_ms": 180000, "rounds": 21918043}, {"row": 100, "bank": 1, "real": 16, "dummy": 22, "total": 38, "elapsed_ms": 180000, "rounds": 21351769}, {"row": 100, "bank": 1, "real": 14, "dummy": 23, "total": 37, "elapsed_ms": 180000, "rounds": 21868868}, {"row": 100, "bank": 1, "real": 14, "dummy": 24, "total": 38, "elapsed_ms": 180000, "rounds": 21318470}, {"row": 100, "bank": 1, "real": 12, "dummy": 25, "total": 37, "elapsed_ms": 180000, "rounds": 21866612}, {"row": 100, "bank": 1, "real": 12, "dummy": 26, "total": 38, "elapsed_ms": 180000, "rounds": 21310420}, {"row": 100, "bank": 1, "real": 10, "dummy": 27, "total": 37, "elapsed_ms": 180000, "rounds": 21741957}, {"row": 100, "bank": 1, "real": 10, "dummy": 28, "total": 38, "elapsed_ms": 180000, "rounds": 21315471}, {"row": 100, "bank": 1, "real": 8, "dummy": 29, "total": 37, "elapsed_ms": 180000, "rounds": 21863199}, {"row": 100, "bank": 1, "real": 8, "dummy": 30, "total": 38, "elapsed_ms": 180000, "rounds": 21314678}, {"row": 100, "bank": 1, "real": 6, "dummy": 31, "total": 37, "elapsed_ms": 180000, "rounds": 21869492}, {"row": 100, "bank": 1, "real": 6, "dummy": 32, "total": 38, "elapsed_ms": 180000, "rounds": 21320711}, {"row": 100, "bank": 1, "real": 4, "dummy": 33, "total": 37, "elapsed_ms": 180000, "rounds": 21899471}, {"row": 100, "bank": 1, "real": 4, "dummy": 34, "total": 38, "elapsed_ms": 180000, "rounds": 21345789}, {"row": 100, "bank": 1, "real": 2, "dummy": 35, "total": 37, "elapsed_ms": 180000, "rounds": 21915889}, {"row": 100, "bank": 1, "real": 2, "dummy": 36, "total": 38, "elapsed_ms": 180000, "rounds": 21357061}, {"row": 100, "bank": 1, "real": 0, "dummy": 37, "total": 37, "elapsed_ms": 180000, "rounds": 21556314}, {"row": 100, "bank": 1, "real": 0, "dummy": 38, "total": 38, "elapsed_ms": 180000, "rounds": 21352597}];
+const GAPS = [20,20,20,19,20,20,20,20,20,20,20,20,20,20,20,19,20,20,21,19,20,20,3,16,20,20,20,20,19,20,20,19,20,20,20,19,20,20,20,19,20,20,20,20,19,20,20,20,19,20,21,19,20,20,20,19,20,20,20,20,20,20,20,19,20,20,20,20,20,20,20,20,19,20,20,20,20,20,19,20,20,20,20,20,20,19,20,20,20,20,20,19,20,20,20,20,20,19,20,20,20,20,19,20,20,20,20,19,20,20,20,15,19,20,20,20,20,19,20,20,20,19,8,0,20,20,20,20,20,20,19,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,19,20,20,20,20,20,20,20,20,20,20,20,19,20,21,19,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,19,20,20,20,20,20,20,20,20,20,20,19,20,20,20,20,20,20,19,20,20,20,20,20,20,20,20,20,19,20,19,19,19,20,19,20,19,20,19,20,19,19,20,19,20,19,20,20,19,19,20,19,19,20,19,20,20,19,19,20,19,20,19,20,19,19,19,20,20,19,19,20,4,7,20,20,19,19,20,20,19,19,19,20,20,19,19,19,20,19,20,20,19,19,20,19,20,19,19,20,20,19,19,19,20,19,19,20,19,20,19,20,19,20,19,19,20,19,20,19,20,19,20,19,19,20,20,19,19,20,19,19,20,20,19,19,20,19,19,20,19,20,19,20,20,19,19,20,19,20,19,20,19,20,19,19,20,20,19,19,20,19,19,19,20,19,20,20,19,19,20,20,19,19,20,19,19,20,20,19,20,19,19,19,20,20,19,19,20,20,19,19,19,20,20,19,20,19,19,20,20,2,13,20,19,20,19,19,20,19,20,19,19,20,19,20,19,19,20,19,19,20,20,19,20,19,19,20,19,19,20,19,20,19,20,19,19,20,19,20,19,19,20,19,20,20,19,19,19,20,19,20,20,19,20,19,19,20,19,20,19,20,19,20,19,20,19,19,20,19,19,20,19,20,19,20,19,20,19,20,19,19,20,19,20,19,20,19,20,19,20,19,19,20,19,20,20,19,19,20,19,19,20,20,19,20,19,19,20,20,19,19,20,19,20,20,19,19,19,20,19,20,19,20,19,20,19,19,20,19,0,16,20,20,20,20,20,19,20,19,20,19,19,20,20,19,19,20,19,20,19,20,19,20,19,19,20,19,19,20,19,20,19,20,19,19,20,20,19,19,20,19,20,19,20,19,20,19,19,20,19,20,19,20,19,19,20,20,19,19,20,19,20,19,19,20,19,20,20,19,19,20,19,19,20,20,19,19,20,19,20,19,20,19,19,20,20,19,20,19,20,19,19,20,19,20,19,20,19,19,20,20,19,20,19,20,19,19,20,19,20,19,20,20,19,19,20,19,20,19,20,19,19,20,19,20,19,20,19,11,20,19,20,19,20,19,20,19,19,20,19,20,19,19,20,20,19,19,20,19,20,19,19,20,20,19,19,20,19,19,20,19,20,19,19,20,20,19,19,20,19,19,20,19,20,19,20,20,19,19,20,19,20,19,19,20,19,20,19,20,20,19,19,20,19,19,20,20,19,19,20,20,19,19,19,20,19,20,19,20,19,20,20,19,19,20,19,20,19,20,19,20,19,20,18,20,20,19,20,19,19,20,19,20,19,20,19,20,19,20,19,20,19,19,20,19,20,19,20,19,19,20,19,20,19,19,18,19,19,20,20,19,19,20,20,19,19,19,20,19,20,19,20,19,20,19,20,19,19,20,20,19,19,19,20,20,19,19,20,19,19,20,20,19,19,20,19,20,19,19,20,20,19,20,19,20,19,19,20,20,19,19,20,20,19,19,19,20,19,19,20,19,20,19,19,20,20,19,20,19,19,20,20,19,20,19,19,20,19,19,20,19,20,20,18,20,20,19,19,20,20,19,19,20,19,19,20,19,20,19,20,20,19,19,20,20,19,19,20,20,20,20,20,20,20,19,20,20,20,20,20,19,19,20,15,18,20,19,19,20,19,19,20,19,20,19,20,18,20,20,19,20,19,19,20,19,19,20,19,20,19,20,20,19,19,20,19,20,19,19,20,20,19,19,20,19,20,19,19,20,20,19,19,20,20,19,19,20,19,20,19,20,19,19,20,19,20,20,19,20,19,19,19,20,20,19,19,20,19,19,20,20,19,19,19,20,20,19,19,20,20,19,19,20,19,19,20,20,19,19,20,19,19,20,19,20,19,20,19,20,19,19,20,19,20,19,19,20,20,19,19,20,19,20,19,20,19,19,20,19,20,13,4,13,1,19,20,20,19,19,19,20,19,20,19,20,19,20,19,20,19,19,20,19,20,19,20,19,19,20,20,19,20,19,19,20,20,19,20,19,19,19,20,19,20,20,19,19,20,19,20,19,20,19,19,20,19,20,19,20,19,19,20,20,19,19,20,20,19,19,20,19,20,20,19,20,19,19,20,19,20,20,19,20,19,20,19,20,19,19,20,19,20,20,19,20,19,20,19,19,20,19,20,19,19,20,19,20,19,20,19,20,19,19,20,19,20,20,19,19,19,20,20,19,20,19,20,19,20,19,20,19,11,4,20,19,19,19,20,20,19,19,20,19,20,19,19,20,20,19,20,19,19,19,20,19,20,19,20,19,19,20,19,20,20,19,20,19,19,19,20,20,19,19,20,19,20,19,19,20,19,20,20,18,20,20,19,20,19,19,20,19,19,20,19,20,19,20,20,19,19,19,20,19,20,19,19,20,19,20,19,20,20,19,19,20,19,19,20,19,20,19,20,19,19,20,19,20,19,19,20,20,19,19,20,19,20,19,19,20,19,20,19,20,19,20,19,20,19,19,20,19,20,19,20,19,19,20,19,19,19,9,5,20,19,20,19,20,20,19,20,19,20,19,19,19,20,20,19,20,19,19,20,19,20,19,19,20,19,20,19,20,19,20,20,20,20,20,19,20,19,20,20,19,20,19,20,19,19,20,19,19,20,20,19,19,19,20,19,20,20,19,19,20,19,19,20,20,19,19,20,20,19,19,20,20,19,19,19,20,20,19,19,20,19,19,20,20,19,20,19,19,20,19,20,4,14,19,20,19,19,20,19,19,20,19,19,20,19,19,20,19,20,19,20,19,19,20,19,20,19,19,19,20,19,19,20,19,19,7,9,19,19,20,19,19,20,19,20,14,19,19,20,19,20,20,19,19,19,20,19,20,20,19,19,19,20,19,20,19,19,20,20,19,19,20,19,20,20,19,19,19,20,20,19,20,19,19,19,20,20,19,19,20,19,20,19,20,19,20,19,20,19,19,20,19,19,20,19,20,19,20,19,20,19,20,19,20,19,19,19,20,20,19,19,20,20,19,20,19,19,20,19,20,19,20,2,16,19,19,20,19,20,19,19,20,19,20,19,20,19,19,19,20,19,19,19,20,19,20,19,7,5,20,19,4,10,19,20,19,20,19,20,19,19,20,20,19,19,20,20,19,19,20,19,20,20,19,19,19,20,19,19,20,19,20,20,19,19,20,19,20,20,19,19,19,20,19,20,19,20,19,20,19,20,19,19,20,20,18,20,20,19,20,19,19,20,19,20,19,20,19,20,19,19,20,20,18,20,20,19,19,20,19,20,20,19,19,20,19,20,19,19,20,19,20,20,19,20,19,19,20,19,20,19,20,19,20,19,19,20,19,19,20,19,19,20,20,19,19,19,20,20,19,20,19,19,20,19,20,19,20,19,19,3,13,19,19,20,20,19,20,19,20,19,19,19,20,20,19,20,19,19,20,19,20,19,20,20,19,19,19,20,20,19,19,19,20,20,19,19,20,19,20,19,20,20,19,19,19,20,20,19,19,20,20,19,19,20,19,20,19,20,19,19,20,20,19,19,19,20,19,20,19,20,19,19,20,19,20,20,19,20,19,20,19,19,20,19,20,19,19,20,19,20,19,19,20,20,19,19,20,20,19,19,20,19,20,19,19,19,20,19,20,19,20,19,20,20,19,19,20,19,20,19,20,19,19,20,19,20,19,19,1,15,19,19,20,19,20,19,20,19,19,20,19,20,19,19,20,19,20,20,19,19,20,19,20,20,19,19,20,19,20,19,19,20,19,20,19,20,19,19,20,19,19,20,19,20,20,19,20,18,20,19,20,19,20,19,20,19,20,20,19,19,19,20,20,19,19,20,19,20,19,20,19,19,20,19,20,20,19,20,19,19,20,20,19,20,19,19,20,19,19,20,19,20,20,19,19,19,20,19,20,20,19,19,20,20,19,19,20,20,19,20,19,20,19,19,20,19,20,19,19,20,20,19,19,20,20,19,19,16,20,20,19,20,19,20,19,19,19,20,19,20,19,20,19,19,20,19,20,19,19,20,19,20,19,20,19,19,20,20,19,20,18,20,20,19,20,19,20,19,19,20,20,19,19,20,19,19,20,19,20,20,19,19,20,19,20,19,19,20,19,20,19,20,19,20,19,19,20,19,20,20,19,19,20,19,19,20,19,19,20,19,20,19,19,20,20,19,19,20,19,19,20,19,20,19,20,19,19,20,19,20,19,19,20,19,19,20,20,19,19,20,19,20,19,20,19,19,20,19,19,20,19,20,20,19,17,19,19,20,20,19,19,20,20,19,19,20,19,19,20,20,19,20,19,20,19,19,20,19,20,19,20,19,20,19,19,20,19,20,19,19,20,20,19,20,19,19,20,19,20,19,19,20,20,19,20,19,20,19,19,20,19,20,20,19,20,19,19,19,20,19,20,20,19,20,19,20,19,19,20,19,20,19,19,20,20,19,20,19,20,19,20,19,19,20,19,20,19,20,19,20,19,20,19,19,20,19,19,20,19,20,19,19,20,20,19,20,19,19,20,19,20,19,19,20,20,19,20,19,19,20,19,19,16,20,20,19,19,19,20,20,19,20,19,19,20,19,19,20,20,19,19,20,19,20,19,20,19,19,20,19,20,19,19,20,19,19,20,20,19,19,20,20,19,20,19,20,19,20,19,19,20,19,19,20,20,19,20,19,20,19,19,20,19,19,20,20,19,19,20,19,20,19,20,19,19,20,19,19,20,19,20,19,20,19,20,19,19,20,20,19,19,20,19,19,20,19,20,19,20,19,20,19,20,19,20,19,19,20,20,18,20,20,19,19,20,20,19,19,20,19,19,20,20,19,19,20,19,19,20,19,13,2,19,19,20,19,20,19,20,19,20,19,20,19,19,20,19,20,19,20,20,19,19,20,19,19,20,19,20,19,20,19,20,19,20,19,20,19,19,20,19,19,20,20,19,20,19,19,20,20,19,19,20,19,20,19,19,20,20,19,20,19,20,19,19,20,19,20,19,19,20,20,19,20,19,20,19,19,20,19,19,20,19,20,19,20,20,19,19,20,20,19,19,19,20,20,19,20,19,19,19,20,20,19,20,19,20,19,19,20,19,20,20,19,19,19,20,20,19,20,19,19,20,19,20,19,19,20,19,11,5,19,20,19,19,20,19,20,19,19,20,20,19,19,20,19,20,19,19,20,19,19,20,19,20,20,19,19];
+const COLORS = {0: "#1f77b4", 1: "#ff7f0e"};
+
+function byBank(b) { return DATA.filter(d => d.bank === b); }
+function line(div, xkey) {
+  const traces = [0,1].map(b => {
+    const g = byBank(b);
+    return {
+      x: g.map(d => d[xkey]),
+      y: g.map(d => d.rounds / 1e6),
+      mode: "lines+markers",
+      name: "bank " + b,
+      line: {color: COLORS[b]},
+      hovertemplate: xkey + "=%{x}<br>rounds=%{y:.2f}M<extra>bank " + b + "</extra>"
+    };
+  });
+  Plotly.newPlot(div, traces, {
+    margin: {t: 10, r: 10, b: 40, l: 50},
+    xaxis: {title: xkey},
+    yaxis: {title: "rounds (millions)"},
+    legend: {orientation: "h", y: 1.12}
+  }, {responsive: true});
+}
+line("rounds", "real");
+line("dummy", "dummy");
+
+const reals = [...new Set(DATA.map(d => d.real))].sort((a,b) => b-a);
+const avg = b => reals.map(r => {
+  const g = DATA.filter(d => d.bank === b && d.real === r);
+  return g.reduce((s,d) => s + d.rounds, 0) / g.length / 1e6;
+});
+Plotly.newPlot("compare", [
+  {x: reals, y: avg(0), name: "bank 0", type: "bar", marker: {color: COLORS[0]}},
+  {x: reals, y: avg(1), name: "bank 1", type: "bar", marker: {color: COLORS[1]}}
+], {
+  margin: {t: 10, r: 10, b: 40, l: 50},
+  barmode: "group",
+  xaxis: {title: "real", autorange: "reversed"},
+  yaxis: {title: "avg rounds (M)"},
+  legend: {orientation: "h", y: 1.12}
+}, {responsive: true});
+
+let html = "<table><tr><th>real</th><th>dummy</th><th>total</th><th>bank0</th><th>bank1</th></tr>";
+const seen = new Set();
+DATA.filter(d => d.bank === 0).forEach(d => {
+  const key = d.real + ":" + d.dummy;
+  if (seen.has(key)) return;
+  seen.add(key);
+  const o = DATA.find(x => x.bank === 1 && x.real === d.real && x.dummy === d.dummy);
+  html += `<tr><td>${d.real}</td><td>${d.dummy}</td><td>${d.total}</td><td>${(d.rounds/1e6).toFixed(2)}M</td><td>${o ? (o.rounds/1e6).toFixed(2)+"M" : "-"}</td></tr>`;
+});
+html += "</table>";
+document.getElementById("table").innerHTML = html;
+
+Plotly.newPlot("series", [{
+  y: GAPS, mode: "lines", line: {color: "#1f77b4", width: 1},
+  hovertemplate: "interval %{x}<br>%{y} accesses<extra></extra>"
+}], {
+  margin: {t: 10, r: 10, b: 40, l: 50},
+  xaxis: {title: "refresh interval index"},
+  yaxis: {title: "accesses between outliers", range: [0, 25]},
+  shapes: [
+    {type:"line", y0:19, y1:19, x0:0, x1:GAPS.length, line:{dash:"dot", color:"#999"}},
+    {type:"line", y0:20, y1:20, x0:0, x1:GAPS.length, line:{dash:"dot", color:"#999"}}
+  ]
+}, {responsive: true});
+
+const counts = {};
+GAPS.forEach(g => counts[g] = (counts[g]||0)+1);
+const xs = Object.keys(counts).map(Number).sort((a,b)=>a-b);
+Plotly.newPlot("hist", [{
+  x: xs, y: xs.map(x => counts[x]), type: "bar", marker: {color: "#1f77b4"}
+}], {
+  margin: {t: 10, r: 10, b: 40, l: 50},
+  xaxis: {title: "accesses between refreshes"},
+  yaxis: {title: "count"}
+}, {responsive: true});
+</script>
+</body>
+</html>
